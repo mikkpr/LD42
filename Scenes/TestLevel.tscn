@@ -17,4 +17,6 @@ degreesToSink = 60
 grabbed_texture = ExtResource( 3 )
 squashed_texture = ExtResource( 3 )
 
+[connection signal="picked_up" from="Boat" to="FlotsamManager" method="spawn_flotsam_dict"]
+
 
