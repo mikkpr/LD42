@@ -11,3 +11,6 @@ func _process(delta):
 	
 	text = "Score: " + str(score)
 	pass
+
+func update(score):
+	text = "Score: " + str(score)
