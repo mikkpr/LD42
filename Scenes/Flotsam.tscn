@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scripts/Flotsam.gd" type="Script" id=1]
 
-[node name="Node" type="Node2D"]
+[node name="Flotsam" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Pause" ]
