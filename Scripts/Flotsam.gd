@@ -59,9 +59,14 @@ func grab_callback():
 	get_node("Label").visible = true
 	print("Flotsam grabbed")
 
+func get_dict():
+	var flotsam_dict = { "weight": weight, "score": score, "drag_texture": drag_texture, "squashed_texture": squashed_texture }
+	return flotsam_dict
+
 func drop_callback():
-	if false: # PLACEHOLDER, replace to asking "so should I be dropped or what?"
-		pass
+	print(get_viewport().get_mouse_position())
+	if $"../../Boat/Cargo".store(get_dict(), get_viewport().get_mouse_position()):
+		queue_free()
 	else:
 		flotsam_state = STATES.dropped
 		can_be_dragged = false

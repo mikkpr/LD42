@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Scenes/HighScores.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/HighScores.gd" type="Script" id=1]
 [ext_resource path="res://Art/background.png" type="Texture" id=2]
-[ext_resource path="res://Fonts/Kirbyss40.tres" type="DynamicFont" id=3]
-[ext_resource path="res://Fonts/Kirbyss24.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Fonts/FontTitles40.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Fonts/FontText24.tres" type="DynamicFont" id=4]
 [ext_resource path="res://Scripts/Networking.gd" type="Script" id=5]
 
 [node name="HighScores" type="Node" index="0"]
@@ -72,7 +72,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 1080.0
-margin_bottom = 36.0
+margin_bottom = 41.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -94,9 +94,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 86.0
+margin_top = 91.0
 margin_right = 1080.0
-margin_bottom = 86.0
+margin_bottom = 91.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -111,10 +111,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 442.0
-margin_top = 136.0
-margin_right = 637.0
-margin_bottom = 164.0
+margin_left = 468.0
+margin_top = 141.0
+margin_right = 612.0
+margin_bottom = 171.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2

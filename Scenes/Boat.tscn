@@ -1,0 +1,168 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Scripts/Boat.gd" type="Script" id=1]
+[ext_resource path="res://Art/Ship_0.png" type="Texture" id=2]
+[ext_resource path="res://Art/Ship_1.png" type="Texture" id=3]
+[ext_resource path="res://Art/ship_2.png" type="Texture" id=4]
+[ext_resource path="res://Art/ship_3.png" type="Texture" id=5]
+[ext_resource path="res://Art/ship_4.png" type="Texture" id=6]
+[ext_resource path="res://Art/ship_5.png" type="Texture" id=7]
+[ext_resource path="res://Scripts/Cargo.gd" type="Script" id=8]
+[ext_resource path="res://Scenes/Container.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Art/container_empty.png" type="Texture" id=10]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Boat" type="Node2D"]
+
+script = ExtResource( 1 )
+degreesPerTilt = 1.0
+degreesToSink = 90
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
+
+scale = Vector2( 2, 2 )
+frames = SubResource( 1 )
+animation = "default"
+frame = 5
+playing = true
+_sections_unfolded = [ "Transform" ]
+
+[node name="Cargo" type="GridContainer" parent="." index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -102.0
+margin_top = -57.0
+margin_right = 182.0
+margin_bottom = 11.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+columns = 8
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Container0" parent="Cargo" index="0" instance=ExtResource( 9 )]
+
+background = ExtResource( 10 )
+
+[node name="Container1" parent="Cargo" index="1" instance=ExtResource( 9 )]
+
+margin_left = 36.0
+margin_right = 68.0
+background = ExtResource( 10 )
+
+[node name="Container2" parent="Cargo" index="2" instance=ExtResource( 9 )]
+
+margin_left = 72.0
+margin_right = 104.0
+background = ExtResource( 10 )
+
+[node name="Container3" parent="Cargo" index="3" instance=ExtResource( 9 )]
+
+margin_left = 108.0
+margin_right = 140.0
+background = ExtResource( 10 )
+
+[node name="Container4" parent="Cargo" index="4" instance=ExtResource( 9 )]
+
+margin_left = 144.0
+margin_right = 176.0
+background = ExtResource( 10 )
+
+[node name="Container5" parent="Cargo" index="5" instance=ExtResource( 9 )]
+
+margin_left = 180.0
+margin_right = 212.0
+background = ExtResource( 10 )
+
+[node name="Container6" parent="Cargo" index="6" instance=ExtResource( 9 )]
+
+margin_left = 216.0
+margin_right = 248.0
+background = ExtResource( 10 )
+
+[node name="Container7" parent="Cargo" index="7" instance=ExtResource( 9 )]
+
+margin_left = 252.0
+margin_right = 284.0
+background = ExtResource( 10 )
+
+[node name="Container8" parent="Cargo" index="8" instance=ExtResource( 9 )]
+
+margin_top = 36.0
+margin_bottom = 68.0
+background = ExtResource( 10 )
+
+[node name="Container9" parent="Cargo" index="9" instance=ExtResource( 9 )]
+
+margin_left = 36.0
+margin_top = 36.0
+margin_right = 68.0
+margin_bottom = 68.0
+background = ExtResource( 10 )
+
+[node name="Container10" parent="Cargo" index="10" instance=ExtResource( 9 )]
+
+margin_left = 72.0
+margin_top = 36.0
+margin_right = 104.0
+margin_bottom = 68.0
+background = ExtResource( 10 )
+
+[node name="Container11" parent="Cargo" index="11" instance=ExtResource( 9 )]
+
+margin_left = 108.0
+margin_top = 36.0
+margin_right = 140.0
+margin_bottom = 68.0
+background = ExtResource( 10 )
+
+[node name="Container12" parent="Cargo" index="12" instance=ExtResource( 9 )]
+
+margin_left = 144.0
+margin_top = 36.0
+margin_right = 176.0
+margin_bottom = 68.0
+background = ExtResource( 10 )
+
+[node name="Container13" parent="Cargo" index="13" instance=ExtResource( 9 )]
+
+margin_left = 180.0
+margin_top = 36.0
+margin_right = 212.0
+margin_bottom = 68.0
+background = ExtResource( 10 )
+
+[node name="Container14" parent="Cargo" index="14" instance=ExtResource( 9 )]
+
+margin_left = 216.0
+margin_top = 36.0
+margin_right = 248.0
+margin_bottom = 68.0
+background = ExtResource( 10 )
+
+[node name="Container15" parent="Cargo" index="15" instance=ExtResource( 9 )]
+
+margin_left = 252.0
+margin_top = 36.0
+margin_right = 284.0
+margin_bottom = 68.0
+background = ExtResource( 10 )
+
+

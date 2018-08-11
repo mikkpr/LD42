@@ -9,10 +9,10 @@ func _ready():
 	$Background.texture = background
 
 func store(flotsam):
-	if store_flotsam || flotsam != null:
+	if !store_flotsam || self.flotsam != null:
 		return false
 	self.flotsam = flotsam
-	$Contents.texture = flotsam.squashed_texture
+	$Contents.texture = flotsam["squashed_texture"]
 	$Contents.visible = true
 	return true
 

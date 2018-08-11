@@ -1,9 +1,9 @@
-extends GridContainer
+extends CanvasItem
 
 var tilt = 0.0  # Weighted sum of the flotsam weights.
 var coeffs = {  # Coefficients for tilt calculation.
-	0: -4.5, 1: -3.6,  2: -2.8,  3: -2.2,  4: 2.2,  5: 2.8,  6: 3.6,  7: 4.5, 
-	8: -4.0, 9: -3.0, 10: -2.0, 11: -1.0, 12: 1.0, 13: 2.0, 14: 3.0, 15: 4.0 
+	0: -4.5, 1: -3.6,  2: -2.8,  3: -2.2,  4: 2.2,  5: 2.8,  6: 3.6,  7: 4.5,
+	8: -4.0, 9: -3.0, 10: -2.0, 11: -1.0, 12: 1.0, 13: 2.0, 14: 3.0, 15: 4.0
 }
 
 func store(flotsam, coords):
