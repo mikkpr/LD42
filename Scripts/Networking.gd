@@ -1,14 +1,15 @@
+extends Node
 
 var urlBase = "http://ludumdare.nikitech.eu"
 var listUrl = "/list_scores.php"
 var postUrl = urlBase + "upload_score.php"
 
 func listScores():
-	
+
 	var err = 0
-	
+
 	var http = HTTPClient.new()
-	
+
 	http.connect_to_host(urlBase, 80)
 	assert(err == OK) # Make sure connection was OK
 
@@ -17,7 +18,7 @@ func listScores():
 		http.poll()
 		print("Connecting..")
 		OS.delay_msec(500)
-	
+
 	# Some headers
 	var headers = [
 		"User-Agent: Pirulo/1.0 (Godot)",
@@ -39,10 +40,10 @@ func listScores():
 
 	print("response? ", http.has_response()) # Site might not have a response.
 
-	
+
 	# Array that will hold the data
 	var rb = PoolByteArray()
-	
+
 	while http.get_status() == HTTPClient.STATUS_BODY:
 		print("while")
 		# While there is body left to be read
@@ -53,12 +54,11 @@ func listScores():
 			OS.delay_usec(1000)
 		else:
 			rb = rb + chunk # Append to read buffer
-	
+
 	var text = rb.get_string_from_ascii()
 	return JSON.parse(text).result
 
-	
-	
-	
-	
-	
+
+
+
+
