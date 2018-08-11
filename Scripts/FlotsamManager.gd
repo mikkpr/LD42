@@ -3,7 +3,7 @@ extends Node
 export var flotsam_destroy_line = 300
 
 var flotsam = load("res://Scenes/Flotsam.tscn")
-#var img = load("res://icon.png")
+var img = load("res://icon.png")
 
 func _ready():
 	#spawn_flotsam(Vector2(get_viewport().get_visible_rect().size.x, 300), 3, 10, img, img)
