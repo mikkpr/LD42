@@ -19,6 +19,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 use_top_left = false
 script = ExtResource( 1 )
+background = null
 
 [node name="Background" type="TextureRect" parent="." index="0"]
 
