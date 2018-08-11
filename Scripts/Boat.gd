@@ -1,7 +1,7 @@
 extends Node2D
 
-export (float) var degreesPerTilt  # How many degrees to tilt per weight.
-export (int) var degreesToSink  # At how many degrees to sink.
+export (float) var degreesPerTilt = 1.0  # How many degrees to tilt per weight.
+export (int) var degreesToSink = 90  # At how many degrees to sink.
 
 signal picked_up(flotsam)  # Sent when a piece of flotsam is picked up.
 signal sunk  # Sent when the boat has sunk.

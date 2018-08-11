@@ -9,7 +9,7 @@
 [ext_resource path="res://Art/ship_5.png" type="Texture" id=7]
 [ext_resource path="res://Scripts/Cargo.gd" type="Script" id=8]
 [ext_resource path="res://Scenes/Container.tscn" type="PackedScene" id=9]
-[ext_resource path="res://icon.png" type="Texture" id=10]
+[ext_resource path="res://Art/container_empty.png" type="Texture" id=10]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -23,13 +23,12 @@ animations = [ {
 [node name="Boat" type="Node2D"]
 
 script = ExtResource( 1 )
-_sections_unfolded = [ "Transform" ]
-degreesPerTilt = null
-degreesToSink = null
+degreesPerTilt = 1.0
+degreesToSink = 90
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 
-rotation = -25.1327
+scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
 animation = "default"
 frame = 5
@@ -38,13 +37,14 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Cargo" type="GridContainer" parent="." index="1"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 540.0
-margin_bottom = 132.0
+margin_left = -102.0
+margin_top = -57.0
+margin_right = 182.0
+margin_bottom = 11.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -53,7 +53,6 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 columns = 8
 script = ExtResource( 8 )
-_sections_unfolded = [ "Rect" ]
 __meta__ = {
 "_edit_group_": true
 }
