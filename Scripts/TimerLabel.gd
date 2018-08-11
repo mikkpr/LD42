@@ -7,6 +7,9 @@ var time_total_seconds = time_total_minutes * 60
 
 var time_start = 0
 var time_now = 0
+var finishSignalSent = false
+
+signal finished
 
 func _ready():
 	time_start = OS.get_unix_time()
@@ -29,4 +32,10 @@ func _process(delta):
 	var seconds_left = 60 - elapsed_seconds
 	text = "%02d:%02d" % [minutes_left, seconds_left]
 	
+	if minutes_left == 0 and seconds_left == 0 and !finishSignalSent:
+		emit_signal("finished")
+		finishSignalSent = true
+	
 	pass
+
+	
