@@ -1,11 +1,17 @@
 extends Node
 
-var urlBase = "http://ludumdare.nikitech.eu"
-var listUrl = "/list_scores.php"
-var postUrl = urlBase + "upload_score.php"
+const urlBase = "http://ludumdare.nikitech.eu"
+const listUrl = "/list_scores.php"
+const postUrl = "/upload_score.php"
 
 func listScores():
+	return request(HTTPClient.METHOD_GET, listUrl, null)
 
+func postScore(nickname, score):
+	var payload = "nickname=" + str(nickname) + "&score=" + str(score)
+	request(HTTPClient.METHOD_POST, postUrl, payload)
+
+func request(method, url, payload):
 	var err = 0
 
 	var http = HTTPClient.new()
@@ -25,9 +31,12 @@ func listScores():
 		"Accept: */*"
 	]
 
-	print(listUrl)
-	err = http.request(HTTPClient.METHOD_GET, listUrl, headers)
-	print("Error code: " + str(err))
+	if payload != null:
+		headers.append("Content-Type: application/x-www-form-urlencoded")
+		err = http.request(method, url, headers, payload)
+	else:
+		err = http.request(method, url, headers)
+		
 	#assert(err == OK) # Make sure all is OK
 
 	while http.get_status() == HTTPClient.STATUS_REQUESTING:
@@ -36,16 +45,13 @@ func listScores():
 		print("Requesting..")
 		OS.delay_msec(500)
 
-	#assert(http.get_status() == HTTPClient.STATUS_BODY or http.get_status() == HTTPClient.STATUS_CONNECTED) # Make sure request finished well.
-
-	print("response? ", http.has_response()) # Site might not have a response.
-
+	#assert(http.get_status() == HTTPClient.STATUS_BODY 
+	#or http.get_status() == HTTPClient.STATUS_CONNECTED) # Make sure request finished well.
 
 	# Array that will hold the data
 	var rb = PoolByteArray()
 
 	while http.get_status() == HTTPClient.STATUS_BODY:
-		print("while")
 		# While there is body left to be read
 		http.poll()
 		var chunk = http.read_response_body_chunk() # Get a chunk
@@ -56,7 +62,21 @@ func listScores():
 			rb = rb + chunk # Append to read buffer
 
 	var text = rb.get_string_from_ascii()
+	print("Response: " + str(text))
 	return JSON.parse(text).result
+	
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

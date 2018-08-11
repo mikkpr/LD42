@@ -96,6 +96,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 texture = ExtResource( 3 )
+stretch_mode = 0
 
 [node name="Buttons" type="VBoxContainer" parent="MarginContainer/CenterContainer/VBoxContainer" index="1"]
 
@@ -223,9 +224,9 @@ _sections_unfolded = [ "custom_fonts" ]
 
 [connection signal="pressed" from="MarginContainer/CenterContainer/VBoxContainer/Buttons/NewGameButton" to="." method="_on_NewGameButton_pressed"]
 
-[connection signal="pressed" from="MarginContainer/CenterContainer/VBoxContainer/Buttons/HighScoresButton" to="." method="_on_NewGameButton_pressed"]
-
 [connection signal="pressed" from="MarginContainer/CenterContainer/VBoxContainer/Buttons/HighScoresButton" to="." method="_on_HighScoresButton_pressed"]
+
+[connection signal="pressed" from="MarginContainer/CenterContainer/VBoxContainer/Buttons/HighScoresButton" to="." method="_on_NewGameButton_pressed"]
 
 [connection signal="pressed" from="MarginContainer/CenterContainer/VBoxContainer/Buttons/QuitButton" to="." method="_on_QuitButton_pressed"]
 
