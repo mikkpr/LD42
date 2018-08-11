@@ -1,0 +1,281 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/Calculator.gd" type="Script" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+
+[node name="GridContainer" type="Node2D" index="0"]
+
+script = ExtResource( 1 )
+_sections_unfolded = [ "Columns", "custom_styles" ]
+
+[node name="Label" type="Label" parent="." index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 257.0
+margin_top = 136.0
+margin_right = 396.0
+margin_bottom = 174.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_constants/shadow_offset_x = 0
+text = "asd"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Focus", "Hint", "Material", "Rect", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_styles" ]
+
+[node name="Tilt" type="Node2D" parent="." index="2"]
+
+position = Vector2( 321.487, 297.302 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="icon" type="Sprite" parent="Tilt" index="0"]
+
+modulate = Color( 0.890625, 0.210657, 0.210657, 1 )
+scale = Vector2( 5.28641, 0.229443 )
+z_index = 2
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Offset", "Transform", "Visibility", "Z Index" ]
+
+[node name="Boxes" type="Node" parent="." index="3"]
+
+[node name="SpinBox" type="SpinBox" parent="Boxes" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -1.0
+margin_top = -2.0
+margin_right = 156.0
+margin_bottom = 45.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+min_value = 0.0
+max_value = 100.0
+step = 1.0
+page = 0.0
+value = 0.0
+exp_edit = false
+rounded = false
+editable = true
+prefix = ""
+suffix = ""
+
+[node name="SpinBox4" type="SpinBox" parent="Boxes" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 165.0
+margin_top = 3.0
+margin_right = 322.0
+margin_bottom = 50.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+min_value = 0.0
+max_value = 100.0
+step = 1.0
+page = 0.0
+value = 0.0
+exp_edit = false
+rounded = false
+editable = true
+prefix = ""
+suffix = ""
+
+[node name="SpinBox6" type="SpinBox" parent="Boxes" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 332.0
+margin_top = 2.0
+margin_right = 489.0
+margin_bottom = 49.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+min_value = 0.0
+max_value = 100.0
+step = 1.0
+page = 0.0
+value = 0.0
+exp_edit = false
+rounded = false
+editable = true
+prefix = ""
+suffix = ""
+
+[node name="SpinBox8" type="SpinBox" parent="Boxes" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 498.0
+margin_top = 5.0
+margin_right = 655.0
+margin_bottom = 52.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+min_value = 0.0
+max_value = 100.0
+step = 1.0
+page = 0.0
+value = 0.0
+exp_edit = false
+rounded = false
+editable = true
+prefix = ""
+suffix = ""
+
+[node name="SpinBox3" type="SpinBox" parent="Boxes" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -2.0
+margin_top = 54.0
+margin_right = 155.0
+margin_bottom = 101.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+min_value = 0.0
+max_value = 100.0
+step = 1.0
+page = 0.0
+value = 0.0
+exp_edit = false
+rounded = false
+editable = true
+prefix = ""
+suffix = ""
+
+[node name="SpinBox2" type="SpinBox" parent="Boxes" index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 162.0
+margin_top = 57.0
+margin_right = 319.0
+margin_bottom = 104.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+min_value = 0.0
+max_value = 100.0
+step = 1.0
+page = 0.0
+value = 0.0
+exp_edit = false
+rounded = false
+editable = true
+prefix = ""
+suffix = ""
+
+[node name="SpinBox5" type="SpinBox" parent="Boxes" index="6"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 330.0
+margin_top = 56.0
+margin_right = 487.0
+margin_bottom = 103.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+min_value = 0.0
+max_value = 100.0
+step = 1.0
+page = 0.0
+value = 0.0
+exp_edit = false
+rounded = false
+editable = true
+prefix = ""
+suffix = ""
+
+[node name="SpinBox7" type="SpinBox" parent="Boxes" index="7"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 495.0
+margin_top = 57.0
+margin_right = 652.0
+margin_bottom = 104.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+min_value = 0.0
+max_value = 100.0
+step = 1.0
+page = 0.0
+value = 0.0
+exp_edit = false
+rounded = false
+editable = true
+prefix = ""
+suffix = ""
+
+[connection signal="value_changed" from="Boxes/SpinBox" to="." method="_on_SpinBox_value_changed"]
+
+[connection signal="value_changed" from="Boxes/SpinBox4" to="." method="_on_SpinBox_value_changed"]
+
+[connection signal="value_changed" from="Boxes/SpinBox6" to="." method="_on_SpinBox_value_changed"]
+
+[connection signal="value_changed" from="Boxes/SpinBox8" to="." method="_on_SpinBox_value_changed"]
+
+[connection signal="value_changed" from="Boxes/SpinBox3" to="." method="_on_SpinBox_value_changed"]
+
+[connection signal="value_changed" from="Boxes/SpinBox2" to="." method="_on_SpinBox_value_changed"]
+
+[connection signal="value_changed" from="Boxes/SpinBox5" to="." method="_on_SpinBox_value_changed"]
+
+[connection signal="value_changed" from="Boxes/SpinBox7" to="." method="_on_SpinBox_value_changed"]
+
+
