@@ -16,5 +16,4 @@ func _on_QuitButton_pressed():
 
 
 func _on_HighScoresButton_pressed():
-	#get_tree().change_scene("res://Scenes/HighScores.tscn")
-	pass
+	get_tree().change_scene("res://Scenes/HighScores.tscn")
