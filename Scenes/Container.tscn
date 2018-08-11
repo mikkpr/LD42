@@ -20,6 +20,7 @@ size_flags_vertical = 1
 use_top_left = false
 script = ExtResource( 1 )
 background = null
+store_flotsam = true
 
 [node name="Background" type="TextureRect" parent="." index="0"]
 
