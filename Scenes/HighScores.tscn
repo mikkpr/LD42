@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Scenes/HighScores.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/HighScores.gd" type="Script" id=1]
 [ext_resource path="res://Art/background.png" type="Texture" id=2]
 [ext_resource path="res://Fonts/FontTitles40.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Fonts/FontText24.tres" type="DynamicFont" id=4]
@@ -111,10 +111,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 442.0
+margin_left = 468.0
 margin_top = 141.0
-margin_right = 637.0
-margin_bottom = 169.0
+margin_right = 612.0
+margin_bottom = 171.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2

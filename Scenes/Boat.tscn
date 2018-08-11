@@ -20,7 +20,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="Boat" type="Node2D" index="0"]
+[node name="Boat" type="Node2D"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
@@ -29,10 +29,12 @@ degreesToSink = null
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 
+rotation = -25.1327
 frames = SubResource( 1 )
 animation = "default"
-frame = 4
+frame = 5
 playing = true
+_sections_unfolded = [ "Transform" ]
 
 [node name="Cargo" type="GridContainer" parent="." index="1"]
 
