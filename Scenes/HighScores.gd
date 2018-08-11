@@ -1,7 +1,7 @@
 extends Node
 
 onready var ScoreRow = preload("res://Scenes/HighScoreRow.tscn")
-onready var scoresContainer = $MarginContainer/Scores
+onready var scoresContainer = $UI/MarginContainer/Scores
 onready var networking = $Networking
 
 func _ready():
