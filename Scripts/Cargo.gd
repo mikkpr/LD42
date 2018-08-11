@@ -1,4 +1,4 @@
-extends GridContainer
+extends CanvasItem
 
 var tilt = 0.0  # Weighted sum of the flotsam weights.
 var coeffs = {  # Coefficients for tilt calculation.
