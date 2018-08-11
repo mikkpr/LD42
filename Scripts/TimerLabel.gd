@@ -32,7 +32,7 @@ func _process(delta):
 	var seconds_left = 60 - elapsed_seconds
 	text = "%02d:%02d" % [minutes_left, seconds_left]
 	
-	if minutes_left == 0 and seconds_left == 0 and !finishSignalSent:
+	if minutes_left == 0 and seconds_left == 1 and !finishSignalSent:
 		emit_signal("finished")
 		finishSignalSent = true
 	
