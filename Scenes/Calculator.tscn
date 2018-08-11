@@ -3,7 +3,7 @@
 [ext_resource path="res://Scripts/Calculator.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 
-[node name="GridContainer" type="Node2D" index="0"]
+[node name="GridContainer" type="Node2D"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Columns", "custom_styles" ]
