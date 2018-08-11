@@ -13,7 +13,9 @@ func _input(ev):
 			emit_signal("picked_up", flotsam)
 
 func _process(delta):
-	# TODO: Add smoothing.
-	rotation_degrees = degreesPerTilt * $Cargo.tilt
+	# TODO: Add better smoothing.
+	var totalRotation
+	totalRotation = degreesPerTilt * $Cargo.tilt
+	rotation_degrees += (totalRotation - rotation_degrees) / 2 * delta
 	if abs(rotation_degrees) > degreesToSink:
 		emit_signal("sunk")
