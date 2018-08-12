@@ -11,7 +11,7 @@ var dragging = null # Flotsam we are currently dragging.
 var flotsam_kinds = {
 	"shark": {
 		"weight_range": Vector2(5, 7),
-		"score_range": Vector2(5, 7),
+		"score_range": Vector2(50, 70),
 		"floating": "medium_float",
 		"dragged": "shark_dragged",
 		"stored": "shark_stored"
