@@ -18,7 +18,7 @@ func post_score_async(nickname, score):
 		return
 	print("post_async")
 	thread.start(self, "post_score", { "nickname" : nickname, "score": score })
-		
+
 func list_scores(required_parameter_for_thread):
 	return request(HTTPClient.METHOD_GET, listUrl, null)
 
@@ -81,9 +81,9 @@ func request(method, url, payload):
 	print("Response: " + str(text))
 	var json = JSON.parse(text).result
 	http.close()
-	
+
 	emit_signal("load_complete", json)
-	
+
 	return json
 
 
