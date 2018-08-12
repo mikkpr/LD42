@@ -8,7 +8,7 @@ func _ready():
 	pass
 
 func _process(delta):
-	
+
 	#text = "Score: " + str(score)
 	pass
 

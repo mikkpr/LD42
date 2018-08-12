@@ -1,28 +1,24 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://Scripts/BoatV2.gd" type="Script" id=1]
-[ext_resource path="res://Art/Ship_0.png" type="Texture" id=2]
-[ext_resource path="res://Art/Ship_1.png" type="Texture" id=3]
-[ext_resource path="res://Art/ship_2.png" type="Texture" id=4]
-[ext_resource path="res://Art/ship_3.png" type="Texture" id=5]
-[ext_resource path="res://Art/ship_4.png" type="Texture" id=6]
-[ext_resource path="res://Art/ship_5.png" type="Texture" id=7]
+[ext_resource path="res://Art/Ship_0.png" type="Texture" id=1]
+[ext_resource path="res://Art/Ship_1.png" type="Texture" id=2]
+[ext_resource path="res://Art/ship_2.png" type="Texture" id=3]
+[ext_resource path="res://Art/ship_3.png" type="Texture" id=4]
+[ext_resource path="res://Art/ship_4.png" type="Texture" id=5]
+[ext_resource path="res://Art/ship_5.png" type="Texture" id=6]
+[ext_resource path="res://Scripts/CargoV2.gd" type="Script" id=7]
 [ext_resource path="res://Scenes/ContainerV2.tscn" type="PackedScene" id=8]
 
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[node name="Boat" type="Node2D" index="0"]
-
-script = ExtResource( 1 )
-degrees_per_tilt = 1.0
-degrees_to_sink = 90
+[node name="Boat" type="Node2D"]
 
 [node name="Sprite" type="AnimatedSprite" parent="." index="0"]
 
@@ -30,10 +26,12 @@ position = Vector2( -38.9059, 0.540344 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
 animation = "default"
-frame = 0
+frame = 2
 playing = true
 
 [node name="Cargo" type="Node2D" parent="." index="1"]
+
+script = ExtResource( 7 )
 
 [node name="Container1" parent="Cargo" index="0" instance=ExtResource( 8 )]
 
@@ -117,68 +115,68 @@ coefficient = 3.0
 position = Vector2( 150.76, -2.7018 )
 coefficient = 4.0
 
-[connection signal="entered" from="Cargo/Container1" to="." method="_activate"]
+[connection signal="entered" from="Cargo/Container1" to="Cargo" method="_activate"]
 
-[connection signal="exited" from="Cargo/Container1" to="." method="_deactivate"]
+[connection signal="exited" from="Cargo/Container1" to="Cargo" method="_deactivate"]
 
-[connection signal="entered" from="Cargo/Container2" to="." method="_activate"]
+[connection signal="entered" from="Cargo/Container2" to="Cargo" method="_activate"]
 
-[connection signal="exited" from="Cargo/Container2" to="." method="_deactivate"]
+[connection signal="exited" from="Cargo/Container2" to="Cargo" method="_deactivate"]
 
-[connection signal="entered" from="Cargo/Container3" to="." method="_activate"]
+[connection signal="entered" from="Cargo/Container3" to="Cargo" method="_activate"]
 
-[connection signal="exited" from="Cargo/Container3" to="." method="_deactivate"]
+[connection signal="exited" from="Cargo/Container3" to="Cargo" method="_deactivate"]
 
-[connection signal="entered" from="Cargo/Container4" to="." method="_activate"]
+[connection signal="entered" from="Cargo/Container4" to="Cargo" method="_activate"]
 
-[connection signal="exited" from="Cargo/Container4" to="." method="_deactivate"]
+[connection signal="exited" from="Cargo/Container4" to="Cargo" method="_deactivate"]
 
-[connection signal="entered" from="Cargo/Container5" to="." method="_activate"]
+[connection signal="entered" from="Cargo/Container5" to="Cargo" method="_activate"]
 
-[connection signal="exited" from="Cargo/Container5" to="." method="_deactivate"]
+[connection signal="exited" from="Cargo/Container5" to="Cargo" method="_deactivate"]
 
-[connection signal="entered" from="Cargo/Container6" to="." method="_activate"]
+[connection signal="entered" from="Cargo/Container6" to="Cargo" method="_activate"]
 
-[connection signal="exited" from="Cargo/Container6" to="." method="_deactivate"]
+[connection signal="exited" from="Cargo/Container6" to="Cargo" method="_deactivate"]
 
-[connection signal="entered" from="Cargo/Container7" to="." method="_activate"]
+[connection signal="entered" from="Cargo/Container7" to="Cargo" method="_activate"]
 
-[connection signal="exited" from="Cargo/Container7" to="." method="_deactivate"]
+[connection signal="exited" from="Cargo/Container7" to="Cargo" method="_deactivate"]
 
-[connection signal="entered" from="Cargo/Container8" to="." method="_activate"]
+[connection signal="entered" from="Cargo/Container8" to="Cargo" method="_activate"]
 
-[connection signal="exited" from="Cargo/Container8" to="." method="_deactivate"]
+[connection signal="exited" from="Cargo/Container8" to="Cargo" method="_deactivate"]
 
-[connection signal="entered" from="Cargo/Container9" to="." method="_activate"]
+[connection signal="entered" from="Cargo/Container9" to="Cargo" method="_activate"]
 
-[connection signal="exited" from="Cargo/Container9" to="." method="_deactivate"]
+[connection signal="exited" from="Cargo/Container9" to="Cargo" method="_deactivate"]
 
-[connection signal="entered" from="Cargo/Container10" to="." method="_activate"]
+[connection signal="entered" from="Cargo/Container10" to="Cargo" method="_activate"]
 
-[connection signal="exited" from="Cargo/Container10" to="." method="_deactivate"]
+[connection signal="exited" from="Cargo/Container10" to="Cargo" method="_deactivate"]
 
-[connection signal="entered" from="Cargo/Container11" to="." method="_activate"]
+[connection signal="entered" from="Cargo/Container11" to="Cargo" method="_activate"]
 
-[connection signal="exited" from="Cargo/Container11" to="." method="_deactivate"]
+[connection signal="exited" from="Cargo/Container11" to="Cargo" method="_deactivate"]
 
-[connection signal="entered" from="Cargo/Container12" to="." method="_activate"]
+[connection signal="entered" from="Cargo/Container12" to="Cargo" method="_activate"]
 
-[connection signal="exited" from="Cargo/Container12" to="." method="_deactivate"]
+[connection signal="exited" from="Cargo/Container12" to="Cargo" method="_deactivate"]
 
-[connection signal="entered" from="Cargo/Container13" to="." method="_activate"]
+[connection signal="entered" from="Cargo/Container13" to="Cargo" method="_activate"]
 
-[connection signal="exited" from="Cargo/Container13" to="." method="_deactivate"]
+[connection signal="exited" from="Cargo/Container13" to="Cargo" method="_deactivate"]
 
-[connection signal="entered" from="Cargo/Container14" to="." method="_activate"]
+[connection signal="entered" from="Cargo/Container14" to="Cargo" method="_activate"]
 
-[connection signal="exited" from="Cargo/Container14" to="." method="_deactivate"]
+[connection signal="exited" from="Cargo/Container14" to="Cargo" method="_deactivate"]
 
-[connection signal="entered" from="Cargo/Container15" to="." method="_activate"]
+[connection signal="entered" from="Cargo/Container15" to="Cargo" method="_activate"]
 
-[connection signal="exited" from="Cargo/Container15" to="." method="_deactivate"]
+[connection signal="exited" from="Cargo/Container15" to="Cargo" method="_deactivate"]
 
-[connection signal="entered" from="Cargo/Container16" to="." method="_activate"]
+[connection signal="entered" from="Cargo/Container16" to="Cargo" method="_activate"]
 
-[connection signal="exited" from="Cargo/Container16" to="." method="_deactivate"]
+[connection signal="exited" from="Cargo/Container16" to="Cargo" method="_deactivate"]
 
 

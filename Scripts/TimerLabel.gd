@@ -1,41 +1,32 @@
 extends Label
 
+onready var timer = $"../GameTimer"
+
+
 var isPaused = false
 
-var time_total_minutes = 4
-var time_total_seconds = time_total_minutes * 60
-
 var time_start = 0
-var time_now = 0
-var finishSignalSent = false
 
 signal finished
 
 func _ready():
-	time_start = OS.get_unix_time()
-	pass
+	time_start = timer.time_left
+	timer.start()
 
 func _process(delta):
-	
-	if isPaused:
-		return
-	
-	time_now = OS.get_unix_time()
-	var elapsed = time_now - time_start
-	var elapsed_minutes = elapsed / 60
-	var elapsed_seconds = elapsed % 60
+	timer.paused = isPaused
 
-	if elapsed_seconds == 0:
+	if timer.paused:
 		return
-	
-	var minutes_left = time_total_minutes - elapsed_minutes
-	var seconds_left = 60 - elapsed_seconds
+
+	var time_now = timer.time_left
+	var total_seconds_left = int(time_now) - int(time_start)
+
+	var minutes_left = total_seconds_left / 60
+	var seconds_left = total_seconds_left % 60
+
 	text = "%02d:%02d" % [minutes_left, seconds_left]
-	
-	if minutes_left == 0 and seconds_left == 1 and !finishSignalSent:
-		emit_signal("finished")
-		finishSignalSent = true
-	
-	pass
 
-	
+
+func _on_GameTimer_timeout():
+	isPaused = true
