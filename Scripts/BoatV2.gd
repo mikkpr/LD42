@@ -11,9 +11,6 @@ var tilt = 0.0    # Weighted sum of the Flotsam weights.
 var score = 0     # Sum of Flotsam scores.
 var active = null # Current active Container.
 
-func _ready():
-	$WheelSplashAudio.play()
-
 func _process(delta):
 	# TODO: Add better smoothing.
 	rotation_degrees += (tilt * degrees_per_tilt - rotation_degrees) / 2 * delta
