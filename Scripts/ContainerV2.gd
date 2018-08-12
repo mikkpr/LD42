@@ -10,6 +10,9 @@ signal underflowed    # Emitted when attempted to remove from empty Container.
 
 export (float) var coefficient = 1.0 # Weight coefficient for the Container.
 
+export (Color, RGBA) var empty_highlight = Color(0, 0, 0, 0) # Highlight color when empty.
+export (Color, RGBA) var full_highlight = Color(0, 0, 0, 0)  # Highlight color when full.
+
 func store(child):
 	if $Contents.get_child_count() > 0:
 		emit_signal("overflowed")
@@ -29,7 +32,10 @@ func remove():
 	return child
 
 func _on_Container_mouse_entered():
+	$Highlight.default_color = empty_highlight if $Contents.get_child_count() == 0 else full_highlight
+	$Highlight.visible = true
 	emit_signal("entered", self)
 
 func _on_Container_mouse_exited():
+	$Highlight.visible = false
 	emit_signal("exited", self)
