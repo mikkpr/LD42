@@ -44,11 +44,16 @@ func _change_state(new_state):
 	match new_state:
 		floating:
 			$AnimationPlayer.play('Float')
+			$Label.visible = false
 		dragging:
 			$AnimationPlayer.stop(true)
 			$AnimationPlayer.seek(0, true)
+			$Label.visible = true
 		dropped:
 			$AnimationPlayer.play('Sink')
+			$Label.visible = false
+		stored:
+			$Label.visible = false
 
 	flotsam_state = new_state
 
@@ -71,13 +76,16 @@ func _process(delta):
 			translate(fall_vector)
 
 func grab_callback():
+	if parent.dragging != null:
+		return false
+	parent.dragging = self
 	$AnimatedSprite.animation = drag_animation_name
 	if flotsam_state == STATES.stored:
 		boat.remove()
 		parent.add_child(self)
 	_change_state(STATES.dragging)
-	$Label.visible = true
 	print("Flotsam grabbed")
+	return true
 
 func drop_callback():
 	print(get_viewport().get_mouse_position())
@@ -91,3 +99,6 @@ func drop_callback():
 		can_be_dragged = false
 	$Label.visible = false
 	print("Flotsam dropped")
+	if parent.dragging == self:
+		parent.dragging = null
+	return true

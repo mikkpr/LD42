@@ -1,7 +1,8 @@
 extends Node2D
 
-signal score(score) # Emitted when the score has updated.
-signal sunk         # Emitted when the boat has sunk.
+signal rotation(degrees) # Emitted when the rotation has updated.
+signal score(score)      # Emitted when the score has updated.
+signal sunk              # Emitted when the boat has sunk.
 
 export (float) var degrees_per_tilt = 1.0 # How many degrees to tilt per weight.
 export (int) var degrees_to_sink = 90     # At how many degrees to sink.
@@ -13,11 +14,13 @@ var active = null # Current active Container.
 func _process(delta):
 	# TODO: Add better smoothing.
 	rotation_degrees += (tilt * degrees_per_tilt - rotation_degrees) / 2 * delta
+	emit_signal("rotation", rotation_degrees)
 	if abs(rotation_degrees) > degrees_to_sink:
 		emit_signal("sunk")
 
 func store(flotsam):
 	if active == null || !active.store(flotsam):
+		print("No active Container" if active == null else "Container full")
 		return false
 	tilt += active.coefficient * flotsam.weight
 	score += flotsam.score
@@ -36,7 +39,13 @@ func remove():
 	return flotsam
 
 func _activate(container):
+	print("Activating Container ", container)
 	active = container
 
 func _deactivate(container):
-	active = null
+	# Only deactivate if container is active, because otherwise things
+	# break if we get out-of-order signals (activate A, activate B,
+	# deactivate A).
+	if active == container:
+		print("Deactivating Container ", container)
+		active = null

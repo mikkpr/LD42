@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/waterwheel.ogg-9c3b726d75882e1eafd795f34cf8a15f.oggstr"
+
+[deps]
+
+source_file="res://Assets/Audio/waterwheel.ogg"
+dest_files=[ "res://.import/waterwheel.ogg-9c3b726d75882e1eafd795f34cf8a15f.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
