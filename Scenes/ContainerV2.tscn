@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/ContainerV2.gd" type="Script" id=1]
 [ext_resource path="res://Art/container_empty.png" type="Texture" id=2]
@@ -9,20 +9,33 @@
 custom_solver_bias = 0.0
 extents = Vector2( 24, 24 )
 
-[sub_resource type="Curve" id=3]
+[sub_resource type="Curve" id=2]
+
+min_value = -200.0
+max_value = 200.0
+bake_resolution = 100
+_data = [ Vector2( 0, 200 ), 0.0, 0.0, 0, 0, Vector2( 1, -200 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=3]
+
+flags = 4
+width = 2048
+curve = SubResource( 2 )
+
+[sub_resource type="Curve" id=4]
 
 min_value = 0.0
 max_value = 1.0
 bake_resolution = 100
 _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=4]
+[sub_resource type="CurveTexture" id=5]
 
 flags = 4
 width = 2048
-curve = SubResource( 3 )
+curve = SubResource( 4 )
 
-[sub_resource type="ParticlesMaterial" id=2]
+[sub_resource type="ParticlesMaterial" id=6]
 
 render_priority = 0
 trail_divisor = 1
@@ -44,6 +57,7 @@ linear_accel = 0.0
 linear_accel_random = 0.0
 radial_accel = 40.0
 radial_accel_random = 0.0
+radial_accel_curve = SubResource( 3 )
 tangential_accel = 0.0
 tangential_accel_random = 0.0
 damping = 0.0
@@ -52,7 +66,7 @@ angle = 0.0
 angle_random = 0.0
 scale = 2.0
 scale_random = 0.0
-scale_curve = SubResource( 4 )
+scale_curve = SubResource( 5 )
 color = Color( 1, 1, 1, 1 )
 hue_variation = 0.0
 hue_variation_random = 0.0
@@ -63,7 +77,7 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Angular Velocity", "Emission Shape", "Gravity", "Linear Accel", "Radial Accel", "Scale", "Spread", "Tangential Accel" ]
 
-[node name="Container" type="Area2D" index="0"]
+[node name="Container" type="Area2D"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -103,7 +117,7 @@ round_precision = 8
 
 emitting = false
 amount = 69
-lifetime = 1.0
+lifetime = 0.2
 one_shot = true
 preprocess = 0.0
 speed_scale = 1.0
@@ -114,7 +128,7 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = true
 draw_order = 0
-process_material = SubResource( 2 )
+process_material = SubResource( 6 )
 texture = null
 normal_map = null
 h_frames = 1
