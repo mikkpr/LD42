@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scripts/TestLevel.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Scoreboard.tscn" type="PackedScene" id=2]
@@ -6,9 +6,10 @@
 [ext_resource path="res://Scenes/BoatV2.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/FlotsamManager.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/UI.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Assets/Audio/music.ogg" type="AudioStream" id=7]
-[ext_resource path="res://Assets/Audio/ship.ogg" type="AudioStream" id=8]
-[ext_resource path="res://Assets/Audio/ship2.ogg" type="AudioStream" id=9]
+[ext_resource path="res://Scripts/Audio.gd" type="Script" id=7]
+[ext_resource path="res://Assets/Audio/music.ogg" type="AudioStream" id=8]
+[ext_resource path="res://Assets/Audio/ship.ogg" type="AudioStream" id=9]
+[ext_resource path="res://Assets/Audio/ship2.ogg" type="AudioStream" id=10]
 
 [sub_resource type="LineShape2D" id=1]
 
@@ -16,7 +17,7 @@ custom_solver_bias = 0.0
 normal = Vector2( 0, -1 )
 d = 31.6592
 
-[node name="Node" type="Node2D"]
+[node name="Node" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
@@ -89,12 +90,14 @@ _sections_unfolded = [ "Visibility" ]
 
 [node name="Audio" type="Node" parent="." index="7"]
 
+script = ExtResource( 7 )
+
 [node name="Music" type="AudioStreamPlayer2D" parent="Audio" index="0"]
 
 position = Vector2( 648.028, 342.661 )
 scale = Vector2( 14.1575, 6.17504 )
-stream = ExtResource( 7 )
-volume_db = -15.0
+stream = ExtResource( 8 )
+volume_db = 0.0
 pitch_scale = 1.0
 autoplay = true
 max_distance = 2000.0
@@ -106,7 +109,7 @@ area_mask = 1
 
 position = Vector2( 638.02, 342.661 )
 scale = Vector2( 13.8448, 6.17504 )
-stream = ExtResource( 8 )
+stream = ExtResource( 9 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = true
@@ -119,7 +122,7 @@ area_mask = 1
 
 position = Vector2( 618.005, 342.661 )
 scale = Vector2( 13.2193, 6.17504 )
-stream = ExtResource( 9 )
+stream = ExtResource( 10 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = true
@@ -127,6 +130,8 @@ max_distance = 2000.0
 attenuation = 1.7411
 bus = "Master"
 area_mask = 1
+
+[connection signal="rotation" from="Boat" to="Audio" method="_on_Boat_rotation"]
 
 [connection signal="score" from="Boat" to="UIContainer/UI" method="_on_Boat_score"]
 
