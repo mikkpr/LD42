@@ -1,6 +1,7 @@
 extends Node2D
 
-signal sunk # Emitted when the boat has sunk.
+signal score(score) # Emitted when the score has updated.
+signal sunk         # Emitted when the boat has sunk.
 
 export (float) var degrees_per_tilt = 1.0 # How many degrees to tilt per weight.
 export (int) var degrees_to_sink = 90     # At how many degrees to sink.
@@ -20,6 +21,7 @@ func store(flotsam):
 		return false
 	tilt += active.coefficient * flotsam.weight
 	score += flotsam.score
+	emit_signal("score", score)
 	return true
 
 func remove():
@@ -30,6 +32,7 @@ func remove():
 		return null
 	tilt -= active.coefficient * flotsam.weight
 	score -= flotsam.score
+	emit_signal("score", score)
 	return flotsam
 
 func _activate(container):
