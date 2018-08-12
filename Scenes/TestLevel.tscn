@@ -26,7 +26,7 @@ position = Vector2( 600, 351 )
 
 [node name="FlotsamManager" parent="." index="2" instance=ExtResource( 3 )]
 
-FLOTSAM_SPAWN_Y = 400
+FLOTSAM_SPAWN_Y = 500
 FLOTSAM_DESTROY_X = 300
 
 [node name="UIContainer" type="Container" parent="." index="3"]

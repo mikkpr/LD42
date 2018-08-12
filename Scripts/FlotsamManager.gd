@@ -1,7 +1,7 @@
 extends Node
 
-export var FLOTSAM_SPAWN_Y = 400
-export var FLOTSAM_DESTROY_X = 300
+export (int, 720) var FLOTSAM_SPAWN_Y = 500
+export (int, 1280) var FLOTSAM_DESTROY_X = 300
 
 var flotsam = load("res://Scenes/Flotsam.tscn")
 var dragging = null # Flotsam we are currently dragging.
