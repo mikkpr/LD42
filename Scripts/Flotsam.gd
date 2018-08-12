@@ -7,7 +7,7 @@ export(String) var drag_animation_name
 export(String) var stored_animation_name
 
 var fall_speed = 500
-var float_speed = 100
+var float_speed = 200
 
 enum STATES {
 	floating,
@@ -61,7 +61,7 @@ func _change_state(new_state):
 
 func _process(delta):
 	if flotsam_state == STATES.floating:
-		if position.x < parent.FLOTSAM_DESTROY_X:
+		if position.x < parent.FLOTSAM_DESTROY_X - 50: # parent.FLOTSAM_DESTROY_X = 0 in TestLevel and we want flotsam to be offscreen before it is dropped
 			_change_state(STATES.dropped)
 			can_be_dragged = false
 		else:
