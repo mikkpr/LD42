@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ship_5.png-e638f4852eb30db3ccb2a84190a8ffe2.stex"
+path="res://.import/sharky_float_0.png-ad62b77f55966738112b575634784f8e.stex"
 
 [deps]
 
-source_file="res://Art/ship_5.png"
-dest_files=[ "res://.import/ship_5.png-e638f4852eb30db3ccb2a84190a8ffe2.stex" ]
+source_file="res://Art/sharky_float_0.png"
+dest_files=[ "res://.import/sharky_float_0.png-ad62b77f55966738112b575634784f8e.stex" ]
 
 [params]
 
