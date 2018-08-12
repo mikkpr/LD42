@@ -1,62 +1,63 @@
-[gd_scene load_steps=63 format=2]
+[gd_scene load_steps=64 format=2]
 
 [ext_resource path="res://Scripts/Flotsam.gd" type="Script" id=1]
-[ext_resource path="res://Art/sharky_float_0.png" type="Texture" id=2]
-[ext_resource path="res://Art/sharky_float_1.png" type="Texture" id=3]
-[ext_resource path="res://Art/sharky_float_2.png" type="Texture" id=4]
-[ext_resource path="res://Art/sharky_float_3.png" type="Texture" id=5]
-[ext_resource path="res://Art/fish_0.png" type="Texture" id=6]
-[ext_resource path="res://Art/fish_1.png" type="Texture" id=7]
-[ext_resource path="res://Art/fish_2.png" type="Texture" id=8]
-[ext_resource path="res://Art/fish_3.png" type="Texture" id=9]
-[ext_resource path="res://Art/medium_item0.png" type="Texture" id=10]
-[ext_resource path="res://Art/medium_item1.png" type="Texture" id=11]
-[ext_resource path="res://Art/medium_item2.png" type="Texture" id=12]
-[ext_resource path="res://Art/medium_item3.png" type="Texture" id=13]
-[ext_resource path="res://Art/medium_item4.png" type="Texture" id=14]
-[ext_resource path="res://Art/medium_item5.png" type="Texture" id=15]
-[ext_resource path="res://Art/medium_item6.png" type="Texture" id=16]
-[ext_resource path="res://Art/medium_item7.png" type="Texture" id=17]
-[ext_resource path="res://Art/goldfish_0.png" type="Texture" id=18]
-[ext_resource path="res://Art/goldfish_1.png" type="Texture" id=19]
-[ext_resource path="res://Art/goldfish_2.png" type="Texture" id=20]
-[ext_resource path="res://Art/goldfish_3.png" type="Texture" id=21]
-[ext_resource path="res://Art/goldfish_container0.png" type="Texture" id=22]
-[ext_resource path="res://Art/goldfish_container1.png" type="Texture" id=23]
-[ext_resource path="res://Art/goldfish_container2.png" type="Texture" id=24]
-[ext_resource path="res://Art/goldfish_container3.png" type="Texture" id=25]
-[ext_resource path="res://Art/shark_container0.png" type="Texture" id=26]
-[ext_resource path="res://Art/shark_container1.png" type="Texture" id=27]
-[ext_resource path="res://Art/shark_container2.png" type="Texture" id=28]
-[ext_resource path="res://Art/shark_container3.png" type="Texture" id=29]
-[ext_resource path="res://Art/big_item0.png" type="Texture" id=30]
-[ext_resource path="res://Art/big_item1.png" type="Texture" id=31]
-[ext_resource path="res://Art/big_item2.png" type="Texture" id=32]
-[ext_resource path="res://Art/big_item3.png" type="Texture" id=33]
-[ext_resource path="res://Art/big_item4.png" type="Texture" id=34]
-[ext_resource path="res://Art/big_item5.png" type="Texture" id=35]
-[ext_resource path="res://Art/big_item6.png" type="Texture" id=36]
-[ext_resource path="res://Art/big_item7.png" type="Texture" id=37]
-[ext_resource path="res://Art/small_item0.png" type="Texture" id=38]
-[ext_resource path="res://Art/small_item1.png" type="Texture" id=39]
-[ext_resource path="res://Art/small_item2.png" type="Texture" id=40]
-[ext_resource path="res://Art/small_item3.png" type="Texture" id=41]
-[ext_resource path="res://Art/small_item4.png" type="Texture" id=42]
-[ext_resource path="res://Art/small_item5.png" type="Texture" id=43]
-[ext_resource path="res://Art/small_item6.png" type="Texture" id=44]
-[ext_resource path="res://Art/small_item7.png" type="Texture" id=45]
-[ext_resource path="res://Art/whale_container0.png" type="Texture" id=46]
-[ext_resource path="res://Art/whale_container1.png" type="Texture" id=47]
-[ext_resource path="res://Art/whale_container2.png" type="Texture" id=48]
-[ext_resource path="res://Art/whale_container3.png" type="Texture" id=49]
-[ext_resource path="res://Art/fish_container0.png" type="Texture" id=50]
-[ext_resource path="res://Art/fish_container1.png" type="Texture" id=51]
-[ext_resource path="res://Art/fish_container2.png" type="Texture" id=52]
-[ext_resource path="res://Art/fish_container3.png" type="Texture" id=53]
-[ext_resource path="res://Art/whale_0.png" type="Texture" id=54]
-[ext_resource path="res://Art/whale_1.png" type="Texture" id=55]
-[ext_resource path="res://Art/whale_2.png" type="Texture" id=56]
-[ext_resource path="res://Art/whale_3.png" type="Texture" id=57]
+[ext_resource path="res://Fonts/FontText40.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Art/sharky_float_0.png" type="Texture" id=3]
+[ext_resource path="res://Art/sharky_float_1.png" type="Texture" id=4]
+[ext_resource path="res://Art/sharky_float_2.png" type="Texture" id=5]
+[ext_resource path="res://Art/sharky_float_3.png" type="Texture" id=6]
+[ext_resource path="res://Art/fish_0.png" type="Texture" id=7]
+[ext_resource path="res://Art/fish_1.png" type="Texture" id=8]
+[ext_resource path="res://Art/fish_2.png" type="Texture" id=9]
+[ext_resource path="res://Art/fish_3.png" type="Texture" id=10]
+[ext_resource path="res://Art/medium_item0.png" type="Texture" id=11]
+[ext_resource path="res://Art/medium_item1.png" type="Texture" id=12]
+[ext_resource path="res://Art/medium_item2.png" type="Texture" id=13]
+[ext_resource path="res://Art/medium_item3.png" type="Texture" id=14]
+[ext_resource path="res://Art/medium_item4.png" type="Texture" id=15]
+[ext_resource path="res://Art/medium_item5.png" type="Texture" id=16]
+[ext_resource path="res://Art/medium_item6.png" type="Texture" id=17]
+[ext_resource path="res://Art/medium_item7.png" type="Texture" id=18]
+[ext_resource path="res://Art/goldfish_0.png" type="Texture" id=19]
+[ext_resource path="res://Art/goldfish_1.png" type="Texture" id=20]
+[ext_resource path="res://Art/goldfish_2.png" type="Texture" id=21]
+[ext_resource path="res://Art/goldfish_3.png" type="Texture" id=22]
+[ext_resource path="res://Art/goldfish_container0.png" type="Texture" id=23]
+[ext_resource path="res://Art/goldfish_container1.png" type="Texture" id=24]
+[ext_resource path="res://Art/goldfish_container2.png" type="Texture" id=25]
+[ext_resource path="res://Art/goldfish_container3.png" type="Texture" id=26]
+[ext_resource path="res://Art/shark_container0.png" type="Texture" id=27]
+[ext_resource path="res://Art/shark_container1.png" type="Texture" id=28]
+[ext_resource path="res://Art/shark_container2.png" type="Texture" id=29]
+[ext_resource path="res://Art/shark_container3.png" type="Texture" id=30]
+[ext_resource path="res://Art/big_item0.png" type="Texture" id=31]
+[ext_resource path="res://Art/big_item1.png" type="Texture" id=32]
+[ext_resource path="res://Art/big_item2.png" type="Texture" id=33]
+[ext_resource path="res://Art/big_item3.png" type="Texture" id=34]
+[ext_resource path="res://Art/big_item4.png" type="Texture" id=35]
+[ext_resource path="res://Art/big_item5.png" type="Texture" id=36]
+[ext_resource path="res://Art/big_item6.png" type="Texture" id=37]
+[ext_resource path="res://Art/big_item7.png" type="Texture" id=38]
+[ext_resource path="res://Art/small_item0.png" type="Texture" id=39]
+[ext_resource path="res://Art/small_item1.png" type="Texture" id=40]
+[ext_resource path="res://Art/small_item2.png" type="Texture" id=41]
+[ext_resource path="res://Art/small_item3.png" type="Texture" id=42]
+[ext_resource path="res://Art/small_item4.png" type="Texture" id=43]
+[ext_resource path="res://Art/small_item5.png" type="Texture" id=44]
+[ext_resource path="res://Art/small_item6.png" type="Texture" id=45]
+[ext_resource path="res://Art/small_item7.png" type="Texture" id=46]
+[ext_resource path="res://Art/whale_container0.png" type="Texture" id=47]
+[ext_resource path="res://Art/whale_container1.png" type="Texture" id=48]
+[ext_resource path="res://Art/whale_container2.png" type="Texture" id=49]
+[ext_resource path="res://Art/whale_container3.png" type="Texture" id=50]
+[ext_resource path="res://Art/fish_container0.png" type="Texture" id=51]
+[ext_resource path="res://Art/fish_container1.png" type="Texture" id=52]
+[ext_resource path="res://Art/fish_container2.png" type="Texture" id=53]
+[ext_resource path="res://Art/fish_container3.png" type="Texture" id=54]
+[ext_resource path="res://Art/whale_0.png" type="Texture" id=55]
+[ext_resource path="res://Art/whale_1.png" type="Texture" id=56]
+[ext_resource path="res://Art/whale_2.png" type="Texture" id=57]
+[ext_resource path="res://Art/whale_3.png" type="Texture" id=58]
 
 [sub_resource type="Animation" id=1]
 
@@ -147,57 +148,57 @@ extents = Vector2( 24, 24 )
 [sub_resource type="SpriteFrames" id=5]
 
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "shark_dragged",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
 "loop": true,
 "name": "fish_dragged",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ) ],
+"frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ) ],
 "loop": true,
 "name": "medium_float",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ) ],
+"frames": [ ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ) ],
 "loop": true,
 "name": "goldfish_dragged",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ) ],
+"frames": [ ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ) ],
 "loop": true,
 "name": "goldfish_stored",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ) ],
+"frames": [ ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ) ],
 "loop": true,
 "name": "shark_stored",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ) ],
+"frames": [ ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ) ],
 "loop": true,
 "name": "big_float",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 45 ) ],
+"frames": [ ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ) ],
 "loop": true,
 "name": "small_float",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 46 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ) ],
+"frames": [ ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 50 ) ],
 "loop": true,
 "name": "whale_stored",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ) ],
+"frames": [ ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ) ],
 "loop": true,
 "name": "fish_stored",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ],
+"frames": [ ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ), ExtResource( 58 ) ],
 "loop": true,
 "name": "whale_dragged",
 "speed": 5.0
@@ -224,24 +225,31 @@ stored_animation_name = null
 
 [node name="Label" type="Label" parent="." index="0"]
 
-visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 86.0
-margin_top = -72.0
-margin_right = 126.0
-margin_bottom = -58.0
+margin_left = 6.0
+margin_top = -57.0
+margin_right = 60.0
+margin_bottom = -1.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.635294, 0.235294, 0.235294, 1 )
+custom_colors/font_color_shadow = Color( 0.445312, 0.093372, 0.093372, 1 )
+custom_constants/shadow_offset_x = 2
+text = "10"
+align = 1
+valign = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
 
@@ -265,7 +273,7 @@ _sections_unfolded = [ "Transform" ]
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 5 )
 animation = "shark_stored"
-frame = 2
+frame = 1
 playing = true
 
 

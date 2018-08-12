@@ -44,11 +44,16 @@ func _change_state(new_state):
 	match new_state:
 		floating:
 			$AnimationPlayer.play('Float')
+			$Label.visible = false
 		dragging:
 			$AnimationPlayer.stop(true)
 			$AnimationPlayer.seek(0, true)
+			$Label.visible = true
 		dropped:
 			$AnimationPlayer.play('Sink')
+			$Label.visible = false
+		stored:
+			$Label.visible = false
 
 	flotsam_state = new_state
 
@@ -79,7 +84,6 @@ func grab_callback():
 		boat.remove()
 		parent.add_child(self)
 	_change_state(STATES.dragging)
-	$Label.visible = true
 	print("Flotsam grabbed")
 	return true
 
