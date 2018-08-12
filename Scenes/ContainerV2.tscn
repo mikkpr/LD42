@@ -3,6 +3,7 @@
 [ext_resource path="res://Scripts/ContainerV2.gd" type="Script" id=1]
 [ext_resource path="res://Art/container_empty.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/Particles2D.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Audio/insert.ogg" type="AudioStream" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -135,6 +136,15 @@ h_frames = 1
 v_frames = 1
 script = ExtResource( 3 )
 _sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Textures", "Time", "Transform", "Visibility", "Z Index" ]
+
+[node name="InsertAudio" type="AudioStreamPlayer" parent="." index="5"]
+
+stream = ExtResource( 4 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
 
 [connection signal="mouse_entered" from="." to="." method="_on_Container_mouse_entered"]
 
