@@ -1,18 +1,21 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/Scoreboard.gd" type="Script" id=1]
 [ext_resource path="res://Fonts/FontTitles40.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Fonts/FontText24.tres" type="DynamicFont" id=3]
-[ext_resource path="res://Scripts/Networking.gd" type="Script" id=4]
+[ext_resource path="res://Fonts/FontText40.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Scripts/Networking.gd" type="Script" id=5]
 
-[node name="Scoreboard" type="Node"]
+[sub_resource type="Theme" id=1]
+
+
+[node name="Scoreboard" type="Node" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect", "Size Flags", "custom_constants" ]
 
 [node name="UI" type="MarginContainer" parent="." index="0"]
 
-visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -135,21 +138,24 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 237.0
-margin_bottom = 75.0
+margin_left = 334.0
+margin_top = -9.0
+margin_right = 496.0
+margin_bottom = 66.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-text = "Nickname"
+theme = SubResource( 1 )
+text = "Nickname: "
 align = 2
 valign = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Margin" ]
+_sections_unfolded = [ "Margin", "Theme", "Visibility", "custom_colors", "custom_fonts", "custom_styles" ]
 
 [node name="TextEdit" type="TextEdit" parent="UI/MarginContainer/EditContainer" index="1"]
 
@@ -157,10 +163,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 255.0
-margin_top = 11.0
-margin_right = 463.0
-margin_bottom = 63.0
+margin_left = 513.0
+margin_top = 4.0
+margin_right = 698.0
+margin_bottom = 52.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -168,6 +174,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_colors/background_color = Color( 0.832661, 0.845363, 0.875, 1 )
 text = ""
 readonly = false
 highlight_current_line = false
@@ -184,7 +191,7 @@ caret_block_mode = false
 caret_blink = false
 caret_blink_speed = 0.65
 caret_moving_by_right_click = true
-_sections_unfolded = [ "Mouse", "Size Flags" ]
+_sections_unfolded = [ "Mouse", "Size Flags", "custom_colors" ]
 
 [node name="Button" type="Button" parent="UI/MarginContainer/EditContainer" index="2"]
 
@@ -192,10 +199,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 207.0
-margin_top = 79.0
-margin_right = 394.0
-margin_bottom = 150.0
+margin_left = 434.0
+margin_top = 83.0
+margin_right = 629.0
+margin_bottom = 132.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -203,6 +210,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_fonts/font = ExtResource( 4 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -210,9 +218,10 @@ group = null
 text = "Submit"
 flat = false
 align = 1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
 [node name="Networking" type="Node" parent="." index="1"]
 
-script = ExtResource( 4 )
+script = ExtResource( 5 )
 
 

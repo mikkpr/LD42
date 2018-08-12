@@ -5,7 +5,7 @@ onready var scoresContainer = $UI/MarginContainer/Scores
 onready var networking = $Networking
 
 func _ready():
-
+	$UI/MarginContainer/Scores/Loading.visible = false
 	networking.connect("load_complete", self, "load_complete")
 	pass
 
