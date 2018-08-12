@@ -21,6 +21,11 @@ var flotsam_animation_names = {
 		"floating": "small_float",
 		"dragged": "goldfish_dragged",
 		"stored": "goldfish_stored"
+	},
+	"whale": {
+		"floating": "big_float",
+		"dragged": "whale_dragged",
+		"stored": "whale_stored"
 	}
 }
 
