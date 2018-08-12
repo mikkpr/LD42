@@ -13,6 +13,7 @@ func _process(delta):
 	pass
 
 func update(score):
+	self.score = score
 	text = "Score: " + str(score)
 
 func get_score():
