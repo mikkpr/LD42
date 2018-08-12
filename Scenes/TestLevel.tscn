@@ -119,4 +119,8 @@ area_mask = 1
 
 [connection signal="score" from="Boat" to="UIContainer/UI" method="_on_Boat_score"]
 
+[connection signal="sunk" from="Boat" to="." method="_on_Boat_sunk"]
+
+[connection signal="sunk" from="Boat" to="UIContainer/UI" method="_on_Boat_sunk"]
+
 
