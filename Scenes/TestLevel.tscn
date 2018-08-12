@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scripts/TestLevel.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Scoreboard.tscn" type="PackedScene" id=2]
@@ -10,7 +10,13 @@
 [ext_resource path="res://Assets/Audio/ship.ogg" type="AudioStream" id=8]
 [ext_resource path="res://Assets/Audio/ship2.ogg" type="AudioStream" id=9]
 
-[node name="Node" type="Node2D" index="0"]
+[sub_resource type="LineShape2D" id=1]
+
+custom_solver_bias = 0.0
+normal = Vector2( 0, -1 )
+d = 31.6592
+
+[node name="Node" type="Node2D"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
@@ -27,12 +33,10 @@ _sections_unfolded = [ "Offset", "Transform" ]
 
 [node name="Boat" parent="." index="2" instance=ExtResource( 4 )]
 
-position = Vector2( 600, 351 )
+position = Vector2( 509.931, 352.54 )
 
 [node name="FlotsamManager" parent="." index="3" instance=ExtResource( 5 )]
 
-FLOTSAM_SPAWN_Y = 500
-FLOTSAM_DESTROY_X = 300
 TIMER_MIN = 0.5
 TIMER_MAX = 3.5
 
@@ -57,7 +61,33 @@ margin_left = -1025.0
 margin_top = 2.0
 margin_bottom = 2.0
 
-[node name="Audio" type="Node" parent="." index="5"]
+[node name="Waterline" type="Area2D" parent="." index="5" groups=[
+"waterline",
+]]
+
+position = Vector2( 639.615, 392.376 )
+scale = Vector2( 20.0016, 0.415319 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Waterline" index="0"]
+
+position = Vector2( -0.307896, -5.56073 )
+shape = SubResource( 1 )
+
+[node name="Water_front" type="Sprite" parent="." index="6"]
+
+modulate = Color( 1, 1, 1, 0.299451 )
+position = Vector2( 639.162, 550.413 )
+scale = Vector2( 1.99673, 2.26814 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="Audio" type="Node" parent="." index="7"]
 
 [node name="Music" type="AudioStreamPlayer2D" parent="Audio" index="0"]
 

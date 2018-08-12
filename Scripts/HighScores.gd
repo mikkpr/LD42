@@ -18,7 +18,7 @@ func _on_BackButton_pressed():
 
 func load_complete(json):
 	$UI/MarginContainer/Scores/Loading.visible = false
-	
+
 	for i in range(json.size()):
 		var score = json[i]
 		var nickname = score.nickname

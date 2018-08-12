@@ -8,7 +8,7 @@ func _on_TutorialButton_pressed():
 
 
 func _on_NewGameButton_pressed():
-	get_tree().change_scene("res://Scenes/Root.tscn")
+	get_tree().change_scene("res://Scenes/TestLevel.tscn")
 
 
 func _on_QuitButton_pressed():
