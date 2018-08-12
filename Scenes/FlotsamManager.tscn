@@ -5,8 +5,7 @@
 [node name="FlotsamManager" type="Node2D"]
 
 script = ExtResource( 1 )
-FLOTSAM_SPAWN_Y = 400
-FLOTSAM_DESTROY_X = 300
+flotsam_destroy_line = 300
 grabbed_texture = null
 squashed_texture = null
 
