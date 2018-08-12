@@ -36,14 +36,14 @@ func paint_initial_texture():
 
 func _change_state(new_state):
 	print("old state: %s, new state: %s" % [flotsam_state, new_state])
-	# TODO animationplayer
-#	match new_state:
-#		floating:
-#			$AnimationPlayer.play('float')
-#		dragging:
-#			$AnimationPlayer.play('default')
-#		dropped:
-#			$AnimationPlayer.play('dropped')
+	match new_state:
+		floating:
+			$AnimationPlayer.play('Float')
+		dragging:
+			$AnimationPlayer.stop(true)
+			$AnimationPlayer.seek(0, true)
+		dropped:
+			$AnimationPlayer.play('Sink')
 
 	flotsam_state = new_state
 
