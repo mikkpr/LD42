@@ -36,7 +36,7 @@ func request(method, url, payload):
 		err = http.request(method, url, headers, payload)
 	else:
 		err = http.request(method, url, headers)
-		
+
 	#assert(err == OK) # Make sure all is OK
 
 	while http.get_status() == HTTPClient.STATUS_REQUESTING:
@@ -45,7 +45,7 @@ func request(method, url, payload):
 		print("Requesting..")
 		OS.delay_msec(500)
 
-	#assert(http.get_status() == HTTPClient.STATUS_BODY 
+	#assert(http.get_status() == HTTPClient.STATUS_BODY
 	#or http.get_status() == HTTPClient.STATUS_CONNECTED) # Make sure request finished well.
 
 	# Array that will hold the data
@@ -64,7 +64,7 @@ func request(method, url, payload):
 	var text = rb.get_string_from_ascii()
 	print("Response: " + str(text))
 	return JSON.parse(text).result
-	
+
 
 
 

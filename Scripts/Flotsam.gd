@@ -25,6 +25,9 @@ func init(i_weight, i_score, i_drag_texture, i_squashed_texture):
 	paint_initial_texture()
 	get_node("Label").text = String(score)
 
+func _ready():
+	_change_state(STATES.floating)
+
 func paint_initial_texture():
 	var float_texture = ImageTexture.new()
 	var texture_image = Image.new()
@@ -33,10 +36,22 @@ func paint_initial_texture():
 	float_texture.create_from_image(texture_image)
 	get_node("Sprite").texture = float_texture
 
+func _change_state(new_state):
+	print("old state: %s, new state: %s" % [flotsam_state, new_state])
+	match new_state:
+		floating:
+			$AnimationPlayer.play('float')
+		dragging:
+			$AnimationPlayer.play('default')
+		dropped:
+			$AnimationPlayer.play('dropped')
+
+	flotsam_state = new_state
+
 func _process(delta):
 	if flotsam_state == STATES.floating:
-		if position.x < get_parent().flotsam_destroy_line:
-			flotsam_state = STATES.dropped
+		if position.x < get_parent().FLOTSAM_DESTROY_X:
+			_change_state(STATES.dropped)
 			can_be_dragged = false
 		else:
 			var float_vector = Vector2()
@@ -55,7 +70,7 @@ func _process(delta):
 
 func grab_callback():
 	get_node("Sprite").texture = drag_texture
-	flotsam_state = STATES.dragging
+	_change_state(STATES.dragging)
 	get_node("Label").visible = true
 	print("Flotsam grabbed")
 
@@ -68,7 +83,7 @@ func drop_callback():
 	if $"../../Boat/Cargo".store(get_dict(), get_viewport().get_mouse_position()):
 		queue_free()
 	else:
-		flotsam_state = STATES.dropped
+		_change_state(STATES.dropped)
 		can_be_dragged = false
 	get_node("Label").visible = false
 	print("Flotsam dropped")
