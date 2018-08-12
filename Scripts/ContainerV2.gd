@@ -23,7 +23,7 @@ func remove():
 		emit_signal("underflowed")
 		return null
 	var child = $Contents.get_child(0)
-	$Contents.remove_child(0)
+	$Contents.remove_child(child)
 	emit_signal("removed", child)
 	return child
 
