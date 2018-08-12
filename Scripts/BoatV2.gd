@@ -5,7 +5,7 @@ signal score(score)      # Emitted when the score has updated.
 signal sunk              # Emitted when the boat has sunk.
 
 export (float) var degrees_per_tilt = 1.0 # How many degrees to tilt per weight.
-export (int) var degrees_to_sink = 90     # At how many degrees to sink.
+export (int) var degrees_to_sink = 30     # At how many degrees to sink.
 
 var tilt = 0.0    # Weighted sum of the Flotsam weights.
 var score = 0     # Sum of Flotsam scores.

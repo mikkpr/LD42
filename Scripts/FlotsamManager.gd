@@ -18,31 +18,38 @@ var flotsam_kinds = {
 	},
 	"fish": {
 		"weight_range": Vector2(3, 4),
-		"score_range": Vector2(3, 4),
+		"score_range": Vector2(30, 40),
 		"floating": "small_float",
 		"dragged": "fish_dragged",
 		"stored": "fish_stored"
 	},
 	"goldfish": {
 		"weight_range": Vector2(1, 2),
-		"score_range": Vector2(1, 2),
+		"score_range": Vector2(80, 188),
 		"floating": "small_float",
 		"dragged": "goldfish_dragged",
 		"stored": "goldfish_stored"
 	},
 	"whale": {
 		"weight_range": Vector2(8, 10),
-		"score_range": Vector2(8, 10),
+		"score_range": Vector2(80, 100),
 		"floating": "big_float",
 		"dragged": "whale_dragged",
 		"stored": "whale_stored"
 	},
 	"mermaid": {
 		"weight_range": Vector2(3, 6),
-		"score_range": Vector2(12, 15),
+		"score_range": Vector2(140, 150),
 		"floating": "medium_float",
 		"dragged": "mermaid_dragged",
 		"stored": "mermaid_stored"
+	},
+	"shoe": {
+		"weight_range": Vector2(1, 1),
+		"score_range": Vector2(0, 3),
+		"floating": "small_float",
+		"dragged": "shoe_dragged",
+		"stored": "shoe_stored"
 	}
 }
 
