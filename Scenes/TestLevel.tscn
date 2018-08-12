@@ -94,4 +94,6 @@ attenuation = 1.7411
 bus = "Master"
 area_mask = 1
 
+[connection signal="score" from="Boat" to="UIContainer/UI" method="_on_Boat_score"]
+
 
