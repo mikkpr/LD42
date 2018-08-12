@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Scenes/UI.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/UI.gd" type="Script" id=1]
 [ext_resource path="res://Fonts/FontText40.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Scripts/TotalLabel.gd" type="Script" id=3]
 [ext_resource path="res://Scripts/TimerLabel.gd" type="Script" id=4]
@@ -36,7 +36,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 7
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0.937255, 0.388235, 0.388235, 1 )
-text = "Score: 500
+text = "Score: 0
 "
 align = 1
 valign = 1
@@ -80,7 +80,7 @@ _sections_unfolded = [ "Anchor", "Margin", "Rect", "custom_colors", "custom_font
 
 process_mode = 1
 wait_time = 180.0
-one_shot = false
+one_shot = true
 autostart = true
 
 [connection signal="timeout" from="GameTimer" to="TimerLabel" method="_on_GameTimer_timeout"]

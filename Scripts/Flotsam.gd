@@ -20,6 +20,7 @@ var flotsam_state = STATES.floating
 
 var parent = null
 var boat = null
+var Splash = preload("res://Scenes/Splash.tscn")
 
 func init(i_weight, i_score, i_float_animation, i_drag_animation, i_stored_animation):
 	weight = i_weight
@@ -35,6 +36,7 @@ func _ready():
 	_change_state(STATES.floating)
 	parent = get_parent()
 	boat = get_tree().get_root().find_node("Boat", true, false)
+	connect("area_entered", self, "_on_area_entered")
 
 func paint_initial_texture():
 	$AnimatedSprite.animation = float_animation_name
@@ -99,6 +101,21 @@ func drop_callback():
 		can_be_dragged = false
 	$Label.visible = false
 	print("Flotsam dropped")
+
 	if parent.dragging == self:
 		parent.dragging = null
 	return true
+
+
+func _on_area_entered(area):
+	if area.is_in_group("waterline") and flotsam_state == STATES.dropped:
+		var x = int(position.x)
+		var y = int(position.y + 24)
+		var splash_position = Vector2(x, y)
+		var splash = Splash.instance()
+		splash.global_position = splash_position
+		get_tree().get_root().add_child(splash)
+		get_tree().get_root().move_child(splash, 0)
+		splash.play()
+		print("splash: %s" % splash.global_position)
+

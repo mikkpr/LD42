@@ -1,0 +1,43 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Scripts/Splash.gd" type="Script" id=1]
+[ext_resource path="res://Art/water_splash00.png" type="Texture" id=2]
+[ext_resource path="res://Art/water_splash01.png" type="Texture" id=3]
+[ext_resource path="res://Art/water_splash02.png" type="Texture" id=4]
+[ext_resource path="res://Art/water_splash03.png" type="Texture" id=5]
+[ext_resource path="res://Art/water_splash04.png" type="Texture" id=6]
+[ext_resource path="res://Art/water_splash05.png" type="Texture" id=7]
+[ext_resource path="res://Art/water_splash06.png" type="Texture" id=8]
+[ext_resource path="res://Art/water_splash07.png" type="Texture" id=9]
+[ext_resource path="res://Art/water_splash08.png" type="Texture" id=10]
+[ext_resource path="res://Art/water_splash09.png" type="Texture" id=11]
+[ext_resource path="res://Art/water_splash10.png" type="Texture" id=12]
+[ext_resource path="res://Art/water_splash11.png" type="Texture" id=13]
+[ext_resource path="res://Art/water_splash12.png" type="Texture" id=14]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ],
+"loop": false,
+"name": "splash",
+"speed": 12.0
+} ]
+
+[node name="Splash" type="Node2D" index="0"]
+
+scale = Vector2( 2, 2 )
+z_index = 10
+z_as_relative = false
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
+
+[node name="Animation" type="AnimatedSprite" parent="." index="0"]
+
+z_index = 1
+z_as_relative = false
+frames = SubResource( 1 )
+animation = "splash"
+_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
+
+
