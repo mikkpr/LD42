@@ -6,6 +6,7 @@ onready var networking = $Networking
 
 func _ready():
 	$UI/MarginContainer/Scores/Loading.visible = false
+	$UI/MarginContainer/PositionLabel.visible = false
 	$UI/MarginContainer/Label.text = "Enter your nickname"
 	
 	networking.connect("load_complete", self, "load_complete")
@@ -28,7 +29,7 @@ func load_complete(json):
 	$UI/MarginContainer/EditContainer.visible = false
 	$UI/MarginContainer/Label.visible = true
 	$UI/MarginContainer/Label.text = "TOP SCORES"
-	
+
 	var scores = json.top
 	for i in range(scores.size()):
 		
@@ -49,4 +50,13 @@ func load_complete(json):
 		scoresContainer.add_child(scoreRow)
 		
 		
-		
+	$UI/MarginContainer/PositionLabel.visible = true
+	$UI/MarginContainer/PositionLabel.text = "Your position: " + str(json.position)
+
+
+
+
+
+
+
+
