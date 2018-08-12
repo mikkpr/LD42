@@ -9,9 +9,19 @@ var flotsam = load("res://Scenes/Flotsam.tscn")
 
 var flotsam_animation_names = {
 	"shark": {
-		"floating": "big_float",
+		"floating": "medium_float",
 		"dragged": "shark_dragged",
 		"stored": "shark_stored"
+	},
+	"fish": {
+		"floating": "small_float",
+		"dragged": "fish_dragged",
+		"stored": "fish_stored"
+	},
+	"goldfish": {
+		"floating": "small_float",
+		"dragged": "goldfish_dragged",
+		"stored": "goldfish_stored"
 	}
 }
 
@@ -45,4 +55,8 @@ func spawn_flotsam_dict(dict):
 	spawn_flotsam(get_viewport().get_mouse_position(), dict["weight"], dict["score"], dict["drag_texture"], dict["squashed_texture"], true)
 
 func _on_Timer_timeout():
-	spawn_flotsam(Vector2(get_viewport().get_visible_rect().size.x, FLOTSAM_SPAWN_Y), 3, 10, "shark")
+	var weight = randi()%11+1
+	var score = randi()%11+1
+	var types = flotsam_animation_names.keys()
+	var type_index = randi()%types.size()
+	spawn_flotsam(Vector2(get_viewport().get_visible_rect().size.x, FLOTSAM_SPAWN_Y), weight, score, types[type_index])

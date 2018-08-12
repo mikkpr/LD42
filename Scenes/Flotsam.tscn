@@ -1,40 +1,56 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=55 format=2]
 
 [ext_resource path="res://Scripts/Flotsam.gd" type="Script" id=1]
-[ext_resource path="res://Art/medium_item0.png" type="Texture" id=2]
-[ext_resource path="res://Art/medium_item1.png" type="Texture" id=3]
-[ext_resource path="res://Art/medium_item2.png" type="Texture" id=4]
-[ext_resource path="res://Art/medium_item3.png" type="Texture" id=5]
-[ext_resource path="res://Art/medium_item4.png" type="Texture" id=6]
-[ext_resource path="res://Art/medium_item5.png" type="Texture" id=7]
-[ext_resource path="res://Art/medium_item6.png" type="Texture" id=8]
-[ext_resource path="res://Art/medium_item7.png" type="Texture" id=9]
+[ext_resource path="res://Art/fish_container0.png" type="Texture" id=2]
+[ext_resource path="res://Art/fish_container1.png" type="Texture" id=3]
+[ext_resource path="res://Art/fish_container2.png" type="Texture" id=4]
+[ext_resource path="res://Art/fish_container3.png" type="Texture" id=5]
+[ext_resource path="res://Art/goldfish_0.png" type="Texture" id=6]
+[ext_resource path="res://Art/goldfish_1.png" type="Texture" id=7]
+[ext_resource path="res://Art/goldfish_2.png" type="Texture" id=8]
+[ext_resource path="res://Art/goldfish_3.png" type="Texture" id=9]
 [ext_resource path="res://Art/sharky_float_0.png" type="Texture" id=10]
 [ext_resource path="res://Art/sharky_float_1.png" type="Texture" id=11]
 [ext_resource path="res://Art/sharky_float_2.png" type="Texture" id=12]
 [ext_resource path="res://Art/sharky_float_3.png" type="Texture" id=13]
-[ext_resource path="res://Art/small_item0.png" type="Texture" id=14]
-[ext_resource path="res://Art/small_item1.png" type="Texture" id=15]
-[ext_resource path="res://Art/small_item2.png" type="Texture" id=16]
-[ext_resource path="res://Art/small_item3.png" type="Texture" id=17]
-[ext_resource path="res://Art/small_item4.png" type="Texture" id=18]
-[ext_resource path="res://Art/small_item5.png" type="Texture" id=19]
-[ext_resource path="res://Art/small_item6.png" type="Texture" id=20]
-[ext_resource path="res://Art/small_item7.png" type="Texture" id=21]
-[ext_resource path="res://Art/shark_container0.png" type="Texture" id=22]
-[ext_resource path="res://Art/shark_container1.png" type="Texture" id=23]
-[ext_resource path="res://Art/shark_container2.png" type="Texture" id=24]
-[ext_resource path="res://Art/shark_container3.png" type="Texture" id=25]
-[ext_resource path="res://Art/big_item0.png" type="Texture" id=26]
-[ext_resource path="res://Art/big_item1.png" type="Texture" id=27]
-[ext_resource path="res://Art/big_item2.png" type="Texture" id=28]
-[ext_resource path="res://Art/big_item3.png" type="Texture" id=29]
-[ext_resource path="res://Art/big_item4.png" type="Texture" id=30]
-[ext_resource path="res://Art/big_item5.png" type="Texture" id=31]
-[ext_resource path="res://Art/big_item6.png" type="Texture" id=32]
-[ext_resource path="res://Art/big_item7.png" type="Texture" id=33]
+[ext_resource path="res://Art/medium_item0.png" type="Texture" id=14]
+[ext_resource path="res://Art/medium_item1.png" type="Texture" id=15]
+[ext_resource path="res://Art/medium_item2.png" type="Texture" id=16]
+[ext_resource path="res://Art/medium_item3.png" type="Texture" id=17]
+[ext_resource path="res://Art/medium_item4.png" type="Texture" id=18]
+[ext_resource path="res://Art/medium_item5.png" type="Texture" id=19]
+[ext_resource path="res://Art/medium_item6.png" type="Texture" id=20]
+[ext_resource path="res://Art/medium_item7.png" type="Texture" id=21]
+[ext_resource path="res://Art/big_item0.png" type="Texture" id=22]
+[ext_resource path="res://Art/big_item1.png" type="Texture" id=23]
+[ext_resource path="res://Art/big_item2.png" type="Texture" id=24]
+[ext_resource path="res://Art/big_item3.png" type="Texture" id=25]
+[ext_resource path="res://Art/big_item4.png" type="Texture" id=26]
+[ext_resource path="res://Art/big_item5.png" type="Texture" id=27]
+[ext_resource path="res://Art/big_item6.png" type="Texture" id=28]
+[ext_resource path="res://Art/big_item7.png" type="Texture" id=29]
+[ext_resource path="res://Art/goldfish_container0.png" type="Texture" id=30]
+[ext_resource path="res://Art/goldfish_container1.png" type="Texture" id=31]
+[ext_resource path="res://Art/goldfish_container2.png" type="Texture" id=32]
+[ext_resource path="res://Art/goldfish_container3.png" type="Texture" id=33]
+[ext_resource path="res://Art/small_item0.png" type="Texture" id=34]
+[ext_resource path="res://Art/small_item1.png" type="Texture" id=35]
+[ext_resource path="res://Art/small_item2.png" type="Texture" id=36]
+[ext_resource path="res://Art/small_item3.png" type="Texture" id=37]
+[ext_resource path="res://Art/small_item4.png" type="Texture" id=38]
+[ext_resource path="res://Art/small_item5.png" type="Texture" id=39]
+[ext_resource path="res://Art/small_item6.png" type="Texture" id=40]
+[ext_resource path="res://Art/small_item7.png" type="Texture" id=41]
+[ext_resource path="res://Art/shark_container0.png" type="Texture" id=42]
+[ext_resource path="res://Art/shark_container1.png" type="Texture" id=43]
+[ext_resource path="res://Art/shark_container2.png" type="Texture" id=44]
+[ext_resource path="res://Art/shark_container3.png" type="Texture" id=45]
+[ext_resource path="res://Art/fish_0.png" type="Texture" id=46]
+[ext_resource path="res://Art/fish_1.png" type="Texture" id=47]
+[ext_resource path="res://Art/fish_2.png" type="Texture" id=48]
+[ext_resource path="res://Art/fish_3.png" type="Texture" id=49]
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=1]
 
 resource_name = "Float"
 length = 2.0
@@ -65,7 +81,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 0, -32 ), Vector2( 0, 32 ) ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=2]
 
 resource_name = "Sink"
 length = 2.0
@@ -96,7 +112,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 32, 0 ), Vector2( -32, 0 ) ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=3]
 
 resource_name = "Stop"
 length = 1.0
@@ -115,17 +131,22 @@ tracks/0/keys = {
 "values": [ Vector2( 10.1104, 0 ) ]
 }
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=4]
 
 custom_solver_bias = 0.0
 extents = Vector2( 24, 24 )
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="SpriteFrames" id=5]
 
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
 "loop": true,
-"name": "medium_float",
+"name": "fish_stored",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "goldfish_dragged",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
@@ -135,17 +156,32 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ) ],
 "loop": true,
+"name": "medium_float",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ) ],
+"loop": true,
+"name": "big_float",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ) ],
+"loop": true,
+"name": "goldfish_stored",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ) ],
+"loop": true,
 "name": "small_float",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ) ],
+"frames": [ ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 45 ) ],
 "loop": true,
 "name": "shark_stored",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ) ],
+"frames": [ ExtResource( 46 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ) ],
 "loop": true,
-"name": "big_float",
+"name": "fish_dragged",
 "speed": 5.0
 } ]
 _sections_unfolded = [ "Resource" ]
@@ -196,24 +232,22 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/Float = SubResource( 3 )
-anims/Sink = SubResource( 4 )
-anims/Stop = SubResource( 5 )
+anims/Float = SubResource( 1 )
+anims/Sink = SubResource( 2 )
+anims/Stop = SubResource( 3 )
 blend_times = [  ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
 
-position = Vector2( 0, -27.3883 )
-shape = SubResource( 2 )
+shape = SubResource( 4 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="3"]
 
-position = Vector2( 0, -27.8523 )
 scale = Vector2( 1.5, 1.5 )
-frames = SubResource( 1 )
+frames = SubResource( 5 )
 animation = "shark_stored"
-frame = 2
+frame = 3
 playing = true
 
 
