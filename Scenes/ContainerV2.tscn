@@ -19,6 +19,8 @@ audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
 coefficient = 1.0
+empty_highlight = Color( 0.223631, 0.664062, 0.11673, 0.588235 )
+full_highlight = Color( 0.6875, 0.059082, 0.059082, 0.588235 )
 
 [node name="Shape" type="CollisionShape2D" parent="." index="0"]
 
@@ -30,6 +32,17 @@ scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 2 )
 
 [node name="Contents" type="Node2D" parent="." index="2"]
+
+[node name="Highlight" type="Line2D" parent="." index="3"]
+
+visible = false
+points = PoolVector2Array( 0, -20, 20, -20, 20, 20, -20, 20, -20, -20, 0, -20 )
+width = 8.0
+default_color = Color( 1, 1, 1, 1 )
+texture_mode = 22
+joint_mode = 2
+sharp_limit = 2.0
+round_precision = 8
 
 [connection signal="mouse_entered" from="." to="." method="_on_Container_mouse_entered"]
 
