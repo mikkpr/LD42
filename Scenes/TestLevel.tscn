@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scripts/TestLevel.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Background.tscn" type="PackedScene" id=2]
@@ -6,10 +6,11 @@
 [ext_resource path="res://Scenes/BoatV2.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/FlotsamManager.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/UI.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scripts/Audio.gd" type="Script" id=7]
-[ext_resource path="res://Assets/Audio/music.ogg" type="AudioStream" id=8]
-[ext_resource path="res://Assets/Audio/ship.ogg" type="AudioStream" id=9]
-[ext_resource path="res://Assets/Audio/ship2.ogg" type="AudioStream" id=10]
+[ext_resource path="res://Art/Water_front.png" type="Texture" id=7]
+[ext_resource path="res://Scripts/Audio.gd" type="Script" id=8]
+[ext_resource path="res://Assets/Audio/music.ogg" type="AudioStream" id=9]
+[ext_resource path="res://Assets/Audio/ship.ogg" type="AudioStream" id=10]
+[ext_resource path="res://Assets/Audio/ship2.ogg" type="AudioStream" id=11]
 
 [sub_resource type="LineShape2D" id=1]
 
@@ -81,17 +82,18 @@ shape = SubResource( 1 )
 modulate = Color( 1, 1, 1, 0.299451 )
 position = Vector2( 639.162, 550.413 )
 scale = Vector2( 1.99673, 2.26814 )
+texture = ExtResource( 7 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="Audio" type="Node" parent="." index="7"]
 
-script = ExtResource( 7 )
+script = ExtResource( 8 )
 
 [node name="Music" type="AudioStreamPlayer2D" parent="Audio" index="0"]
 
 position = Vector2( 648.028, 342.661 )
 scale = Vector2( 14.1575, 6.17504 )
-stream = ExtResource( 8 )
+stream = ExtResource( 9 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = true
@@ -104,7 +106,7 @@ area_mask = 1
 
 position = Vector2( 638.02, 342.661 )
 scale = Vector2( 13.8448, 6.17504 )
-stream = ExtResource( 9 )
+stream = ExtResource( 10 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = true
@@ -117,7 +119,7 @@ area_mask = 1
 
 position = Vector2( 618.005, 342.661 )
 scale = Vector2( 13.2193, 6.17504 )
-stream = ExtResource( 10 )
+stream = ExtResource( 11 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = true

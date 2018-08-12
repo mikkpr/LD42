@@ -74,7 +74,7 @@ func _on_Timer_timeout():
 
 func _rand_range(vec2):
 	return vec2.x + (randi() % int(vec2.y - vec2.x + 1))
-	
+
 func _rand_flotsam():
 	var keys = flotsam_kinds.keys()
 	var flotsamWithRarity = flotsam_kinds[keys[randi() % keys.size()]]
