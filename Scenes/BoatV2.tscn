@@ -37,84 +37,84 @@ playing = true
 
 [node name="Container1" parent="Cargo" index="0" instance=ExtResource( 8 )]
 
-position = Vector2( -137.252, -35.1234 )
-rotation = 0.260417
+position = Vector2( -164.794, -64.4614 )
+rotation = 0.0806486
 coefficient = -4.5
 
 [node name="Container2" parent="Cargo" index="1" instance=ExtResource( 8 )]
 
-position = Vector2( -94.0227, -35.1234 )
+position = Vector2( -112.583, -64.4614 )
 rotation = -0.0683472
 coefficient = -3.6
 
 [node name="Container3" parent="Cargo" index="2" instance=ExtResource( 8 )]
 
-position = Vector2( -54.036, -35.6638 )
+position = Vector2( -60.6221, -65.0018 )
 coefficient = -2.8
 
 [node name="Container4" parent="Cargo" index="3" instance=ExtResource( 8 )]
 
-position = Vector2( -21.0741, -35.1234 )
+position = Vector2( -10.8956, -62.0665 )
 coefficient = -2.2
 
 [node name="Container5" parent="Cargo" index="4" instance=ExtResource( 8 )]
 
-position = Vector2( 17.2915, -34.0427 )
+position = Vector2( 43.6359, -65.1769 )
 coefficient = 2.2
 
 [node name="Container6" parent="Cargo" index="5" instance=ExtResource( 8 )]
 
-position = Vector2( 54.3302, -36.7926 )
+position = Vector2( 87.8594, -105.647 )
 rotation = -0.431211
 coefficient = 2.8
 
 [node name="Container7" parent="Cargo" index="6" instance=ExtResource( 8 )]
 
-position = Vector2( 93.4823, -35.6638 )
+position = Vector2( 137.789, -65.6006 )
 coefficient = 3.6
 
 [node name="Container8" parent="Cargo" index="7" instance=ExtResource( 8 )]
 
-position = Vector2( 132.929, -34.5831 )
+position = Vector2( 192.204, -61.5262 )
 coefficient = 4.5
 
 [node name="Container9" parent="Cargo" index="8" instance=ExtResource( 8 )]
 
-position = Vector2( -154.003, -3.24217 )
+position = Vector2( -177.354, -14.0194 )
 coefficient = -4.0
 
 [node name="Container10" parent="Cargo" index="9" instance=ExtResource( 8 )]
 
-position = Vector2( -109.693, -2.7018 )
+position = Vector2( -118.075, -13.479 )
 coefficient = -3.0
 
 [node name="Container11" parent="Cargo" index="10" instance=ExtResource( 8 )]
 
-position = Vector2( -62.6818, -3.78252 )
+position = Vector2( -66.873, -16.356 )
 coefficient = -2.0
 
 [node name="Container12" parent="Cargo" index="11" instance=ExtResource( 8 )]
 
-position = Vector2( -16.2108, -2.7018 )
+position = Vector2( -18.007, -12.8803 )
 coefficient = -1.0
 
 [node name="Container13" parent="Cargo" index="12" instance=ExtResource( 8 )]
 
-position = Vector2( 29.1794, -2.70181 )
+position = Vector2( 32.7718, -13.479 )
 
 [node name="Container14" parent="Cargo" index="13" instance=ExtResource( 8 )]
 
-position = Vector2( 70.7871, -3.78252 )
+position = Vector2( 82.7618, -14.5598 )
 coefficient = 2.0
 
 [node name="Container15" parent="Cargo" index="14" instance=ExtResource( 8 )]
 
-position = Vector2( 110.774, -2.70181 )
+position = Vector2( 134.125, -15.2753 )
 coefficient = 3.0
 
 [node name="Container16" parent="Cargo" index="15" instance=ExtResource( 8 )]
 
-position = Vector2( 150.76, -2.7018 )
+position = Vector2( 185.487, -12.8803 )
 coefficient = 4.0
 
 [connection signal="entered" from="Cargo/Container1" to="." method="_activate"]

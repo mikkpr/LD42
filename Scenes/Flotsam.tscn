@@ -67,7 +67,7 @@ _sections_unfolded = [ "Resource" ]
 [sub_resource type="RectangleShape2D" id=5]
 
 custom_solver_bias = 0.0
-extents = Vector2( 16, 16 )
+extents = Vector2( 24, 24 )
 
 [node name="Flotsam" type="Area2D"]
 
@@ -109,6 +109,7 @@ max_lines_visible = -1
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="1"]
 
+scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 4 )
 animation = "shark_stored"
 frame = 1
