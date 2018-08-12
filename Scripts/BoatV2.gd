@@ -1,5 +1,6 @@
 extends Node2D
 
+signal tilt(tilt)   # Emitted when the tilt has updated.
 signal score(score) # Emitted when the score has updated.
 signal sunk         # Emitted when the boat has sunk.
 
@@ -21,6 +22,7 @@ func store(flotsam):
 		print("No active Container" if active == null else "Container full")
 		return false
 	tilt += active.coefficient * flotsam.weight
+	emit_signal("tilt", tilt)
 	score += flotsam.score
 	emit_signal("score", score)
 	return true
@@ -32,6 +34,7 @@ func remove():
 	if flotsam == null:
 		return null
 	tilt -= active.coefficient * flotsam.weight
+	emit_signal("tilt", tilt)
 	score -= flotsam.score
 	emit_signal("score", score)
 	return flotsam
