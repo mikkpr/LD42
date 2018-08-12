@@ -2,6 +2,8 @@ extends Node
 
 export (int, 720) var FLOTSAM_SPAWN_Y = 500
 export (int, 1280) var FLOTSAM_DESTROY_X = 300
+export (float) var TIMER_MIN = 0.5
+export (float) var TIMER_MAX = 3.5
 
 var flotsam = load("res://Scenes/Flotsam.tscn")
 var dragging = null # Flotsam we are currently dragging.
@@ -44,6 +46,7 @@ func spawn_flotsam(position, weight, score, kind):
 	add_child(new_flotsam)
 
 func _on_Timer_timeout():
+	$Timer.wait_time = rand_range(TIMER_MIN, TIMER_MAX)
 	var keys = flotsam_kinds.keys()
 	var kind = flotsam_kinds[keys[randi() % keys.size()]]
 	var right_side = get_viewport().get_visible_rect().size.x

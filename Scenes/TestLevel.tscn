@@ -28,6 +28,8 @@ position = Vector2( 600, 351 )
 
 FLOTSAM_SPAWN_Y = 500
 FLOTSAM_DESTROY_X = 300
+TIMER_MIN = 0.5
+TIMER_MAX = 3.5
 
 [node name="UIContainer" type="Container" parent="." index="3"]
 
