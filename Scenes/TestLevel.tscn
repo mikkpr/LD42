@@ -1,8 +1,8 @@
 [gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scripts/TestLevel.gd" type="Script" id=1]
-[ext_resource path="res://Scenes/Scoreboard.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Art/background.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Background.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Scoreboard.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/BoatV2.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/FlotsamManager.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/UI.tscn" type="PackedScene" id=6]
@@ -23,15 +23,9 @@ d = 31.6592
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
-[node name="Scoreboard" parent="." index="0" instance=ExtResource( 2 )]
+[node name="ParallaxBackground" parent="." index="0" instance=ExtResource( 2 )]
 
-[node name="TextureRect" type="Sprite" parent="." index="1"]
-
-position = Vector2( -0.769775, 0 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 3 )
-centered = false
-_sections_unfolded = [ "Offset", "Transform" ]
+[node name="Scoreboard" parent="." index="1" instance=ExtResource( 3 )]
 
 [node name="Boat" parent="." index="2" instance=ExtResource( 4 )]
 
