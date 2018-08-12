@@ -7,6 +7,14 @@ export (Texture) var squashed_texture
 
 var flotsam = load("res://Scenes/Flotsam.tscn")
 
+var flotsam_animation_names = {
+	"shark": {
+		"floating": "big_float",
+		"dragged": "shark_dragged",
+		"stored": "shark_stored"
+	}
+}
+
 func _ready():
 	#spawn_flotsam(Vector2(get_viewport().get_visible_rect().size.x, 300), 3, 10, img, img)
 	set_process_input(false)
@@ -23,9 +31,10 @@ func _input(ev): # made for debug purposes
 		if clicked_on_child == false:
 			spawn_flotsam(get_viewport().get_mouse_position(), 3, 10, grabbed_texture, squashed_texture, true)
 
-func spawn_flotsam(position, weight, score, grab_tex, squash_tex, dragged = false):
+func spawn_flotsam(position, weight, score, kind, dragged = false):
 	var new_flotsam = flotsam.instance()
-	new_flotsam.init(weight, score, grab_tex, squash_tex)
+	var flotsam_animations = flotsam_animation_names[kind]
+	new_flotsam.init(weight, score, flotsam_animations["floating"], flotsam_animations["dragged"], flotsam_animations["stored"])
 	add_child(new_flotsam)
 	new_flotsam.global_position = position
 	# spawn an already dragged Flotsam to mouse position when left button is down or idk what will happen
@@ -36,4 +45,4 @@ func spawn_flotsam_dict(dict):
 	spawn_flotsam(get_viewport().get_mouse_position(), dict["weight"], dict["score"], dict["drag_texture"], dict["squashed_texture"], true)
 
 func _on_Timer_timeout():
-	spawn_flotsam(Vector2(get_viewport().get_visible_rect().size.x, FLOTSAM_SPAWN_Y), 3, 10, grabbed_texture, squashed_texture)
+	spawn_flotsam(Vector2(get_viewport().get_visible_rect().size.x, FLOTSAM_SPAWN_Y), 3, 10, "shark")

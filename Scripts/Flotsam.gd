@@ -2,49 +2,48 @@ extends "./Node2DDraggable.gd"
 
 export(int) var weight
 export(int) var score
-export(Texture) var drag_texture
-export(Texture) var squashed_texture
+export(String) var float_animation_name
+export(String) var drag_animation_name
+export(String) var stored_animation_name
 
-var weight_size_coefficient = 10
 var fall_speed = 500
-var float_speed = 200
+var float_speed = 100
 
 enum STATES {
 	floating,
 	dragging,
-	dropped
+	dropped,
+	stored
 }
 
 var flotsam_state = STATES.floating
 
-func init(i_weight, i_score, i_drag_texture, i_squashed_texture):
+func init(i_weight, i_score, i_float_animation, i_drag_animation, i_stored_animation):
 	weight = i_weight
 	score = i_score
-	drag_texture = i_drag_texture
-	squashed_texture = i_squashed_texture
+	float_animation_name = i_float_animation
+	drag_animation_name = i_drag_animation
+	stored_animation_name = i_stored_animation
 	paint_initial_texture()
-	get_node("Label").text = String(score)
+	$Label.text = String(score)
 
 func _ready():
+	connect("input_event", self, "_input_event")
 	_change_state(STATES.floating)
 
 func paint_initial_texture():
-	var float_texture = ImageTexture.new()
-	var texture_image = Image.new()
-	texture_image.create(weight*weight_size_coefficient, weight*weight_size_coefficient, false, Image.FORMAT_RGBAF)
-	texture_image.fill(Color(1, 0, 0, 0.5))
-	float_texture.create_from_image(texture_image)
-	get_node("Sprite").texture = float_texture
+	$AnimatedSprite.animation = float_animation_name
 
 func _change_state(new_state):
 	print("old state: %s, new state: %s" % [flotsam_state, new_state])
-	match new_state:
-		floating:
-			$AnimationPlayer.play('float')
-		dragging:
-			$AnimationPlayer.play('default')
-		dropped:
-			$AnimationPlayer.play('dropped')
+	# TODO animationplayer
+#	match new_state:
+#		floating:
+#			$AnimationPlayer.play('float')
+#		dragging:
+#			$AnimationPlayer.play('default')
+#		dropped:
+#			$AnimationPlayer.play('dropped')
 
 	flotsam_state = new_state
 
@@ -54,12 +53,10 @@ func _process(delta):
 			_change_state(STATES.dropped)
 			can_be_dragged = false
 		else:
-			var float_vector = Vector2()
-			float_vector.x = - float_speed * delta
-			float_vector.y = 0
+			var float_vector = Vector2(- float_speed * delta, 0)
 			translate(float_vector)
 	if flotsam_state == STATES.dropped:
-		if global_transform.origin.y - get_node("Sprite").texture.get_size().y/2 > get_viewport().get_visible_rect().size.y:
+		if global_transform.origin.y > get_viewport().get_visible_rect().size.y:
 			print("Flotsam destroyed")
 			queue_free()
 		else:
@@ -69,22 +66,27 @@ func _process(delta):
 			translate(fall_vector)
 
 func grab_callback():
-	get_node("Sprite").texture = drag_texture
+	$AnimatedSprite.animation = drag_animation_name
+	if flotsam_state == STATES.stored:
+		var parent = $"../../../.."
+		var manager = parent.get_parent().get_node("FlotsamManager")
+		parent.remove()
+		manager.add_child(self)
 	_change_state(STATES.dragging)
-	get_node("Label").visible = true
+	$Label.visible = true
 	print("Flotsam grabbed")
-
-func get_dict():
-	var flotsam_dict = { "weight": weight, "score": score, "drag_texture": drag_texture, "squashed_texture": squashed_texture }
-	return flotsam_dict
 
 func drop_callback():
 	print(get_viewport().get_mouse_position())
-	if $"../../Boat/Cargo".store(get_dict(), get_viewport().get_mouse_position()):
-		queue_free()
+	var parent = get_parent()
+	var boat = $"../../Boat"
+	parent.remove_child(self)
+	if boat.store(self):
+		$AnimatedSprite.animation = stored_animation_name
+		_change_state(STATES.stored)
 	else:
+		parent.add_child(self)
 		_change_state(STATES.dropped)
 		can_be_dragged = false
-	get_node("Label").visible = false
+	$Label.visible = false
 	print("Flotsam dropped")
-
