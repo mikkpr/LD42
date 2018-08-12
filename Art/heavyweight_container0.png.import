@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/background(old).png-115805ad61c9b1c8a420d1ec53419db1.stex"
+path="res://.import/heavyweight_container0.png-9a4d7578fbf941a0431f3be4b470ab80.stex"
 
 [deps]
 
-source_file="res://Art/background(old).png"
-dest_files=[ "res://.import/background(old).png-115805ad61c9b1c8a420d1ec53419db1.stex" ]
+source_file="res://Art/heavyweight_container0.png"
+dest_files=[ "res://.import/heavyweight_container0.png-9a4d7578fbf941a0431f3be4b470ab80.stex" ]
 
 [params]
 

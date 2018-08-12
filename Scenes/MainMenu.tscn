@@ -5,7 +5,7 @@
 [ext_resource path="res://Fonts/FontTitles40.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Fonts/FontText40.tres" type="DynamicFont" id=4]
 
-[node name="MainMenu" type="Node" index="0"]
+[node name="MainMenu" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -24,6 +24,7 @@ size_flags_vertical = 1
 texture = ExtResource( 2 )
 expand = true
 stretch_mode = 0
+_sections_unfolded = [ "Theme" ]
 
 [node name="MarginContainer" type="MarginContainer" parent="." index="1"]
 
