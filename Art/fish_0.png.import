@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Water_front.png-87b07e5f0f9c5f934125bf1743e90c20.stex"
+path="res://.import/fish_0.png-8a71e19a656a2a9565de70b91ae3a8d8.stex"
 
 [deps]
 
-source_file="res://Art/Water_front.png"
-dest_files=[ "res://.import/Water_front.png-87b07e5f0f9c5f934125bf1743e90c20.stex" ]
+source_file="res://Art/fish_0.png"
+dest_files=[ "res://.import/fish_0.png-8a71e19a656a2a9565de70b91ae3a8d8.stex" ]
 
 [params]
 

@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Water_front.png-87b07e5f0f9c5f934125bf1743e90c20.stex"
+path="res://.import/goldfish_2.png-c7f904c197a85724297f3fa06375ca76.stex"
 
 [deps]
 
-source_file="res://Art/Water_front.png"
-dest_files=[ "res://.import/Water_front.png-87b07e5f0f9c5f934125bf1743e90c20.stex" ]
+source_file="res://Art/goldfish_2.png"
+dest_files=[ "res://.import/goldfish_2.png-c7f904c197a85724297f3fa06375ca76.stex" ]
 
 [params]
 
