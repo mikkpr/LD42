@@ -13,7 +13,13 @@ func _ready():
 		var nickname = score.nickname
 		var value = score.score
 		var scoreRow = ScoreRow.instance()
-
+		
+		if nickname == null:
+			nickname = ""
+		
+		if value == null:
+			value = "0"
+		
 		scoreRow.find_node("Nickname").text = nickname
 		scoreRow.find_node("Score").text = value
 		scoresContainer.add_child(scoreRow)
