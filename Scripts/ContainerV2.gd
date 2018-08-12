@@ -15,6 +15,7 @@ func store(child):
 		emit_signal("overflowed")
 		return false
 	$Contents.add_child(child)
+	child.position = Vector2(0, 0)
 	emit_signal("stored", child)
 	return true
 
@@ -23,7 +24,7 @@ func remove():
 		emit_signal("underflowed")
 		return null
 	var child = $Contents.get_child(0)
-	$Contents.remove_child(0)
+	$Contents.remove_child(child)
 	emit_signal("removed", child)
 	return child
 
