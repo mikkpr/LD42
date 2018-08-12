@@ -1,35 +1,40 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://Art/background.png" type="Texture" id=1]
-[ext_resource path="res://Scenes/BoatV2.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/FlotsamManager.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/UI.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Assets/Audio/music.ogg" type="AudioStream" id=5]
-[ext_resource path="res://Assets/Audio/ship.ogg" type="AudioStream" id=6]
-[ext_resource path="res://Assets/Audio/ship2.ogg" type="AudioStream" id=7]
+[ext_resource path="res://Scripts/TestLevel.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Scoreboard.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Art/background.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/BoatV2.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/FlotsamManager.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/UI.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/Audio/music.ogg" type="AudioStream" id=7]
+[ext_resource path="res://Assets/Audio/ship.ogg" type="AudioStream" id=8]
+[ext_resource path="res://Assets/Audio/ship2.ogg" type="AudioStream" id=9]
 
 [node name="Node" type="Node2D" index="0"]
 
+script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="TextureRect" type="Sprite" parent="." index="0"]
+[node name="Scoreboard" parent="." index="0" instance=ExtResource( 2 )]
+
+[node name="TextureRect" type="Sprite" parent="." index="1"]
 
 position = Vector2( -0.769775, 0 )
 scale = Vector2( 2, 2 )
-texture = ExtResource( 1 )
+texture = ExtResource( 3 )
 centered = false
 _sections_unfolded = [ "Offset", "Transform" ]
 
-[node name="Boat" parent="." index="1" instance=ExtResource( 2 )]
+[node name="Boat" parent="." index="2" instance=ExtResource( 4 )]
 
 position = Vector2( 600, 351 )
 
-[node name="FlotsamManager" parent="." index="2" instance=ExtResource( 3 )]
+[node name="FlotsamManager" parent="." index="3" instance=ExtResource( 5 )]
 
 FLOTSAM_SPAWN_Y = 500
 FLOTSAM_DESTROY_X = 300
 
-[node name="UIContainer" type="Container" parent="." index="3"]
+[node name="UIContainer" type="Container" parent="." index="4"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -43,20 +48,20 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 
-[node name="UI" parent="UIContainer" index="0" instance=ExtResource( 4 )]
+[node name="UI" parent="UIContainer" index="0" instance=ExtResource( 6 )]
 
 anchor_left = 1.0
 margin_left = -1025.0
 margin_top = 2.0
 margin_bottom = 2.0
 
-[node name="Audio" type="Node" parent="." index="4"]
+[node name="Audio" type="Node" parent="." index="5"]
 
 [node name="Music" type="AudioStreamPlayer2D" parent="Audio" index="0"]
 
 position = Vector2( 648.028, 342.661 )
 scale = Vector2( 14.1575, 6.17504 )
-stream = ExtResource( 5 )
+stream = ExtResource( 7 )
 volume_db = -15.0
 pitch_scale = 1.0
 autoplay = true
@@ -69,7 +74,7 @@ area_mask = 1
 
 position = Vector2( 638.02, 342.661 )
 scale = Vector2( 13.8448, 6.17504 )
-stream = ExtResource( 6 )
+stream = ExtResource( 8 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = true
@@ -82,7 +87,7 @@ area_mask = 1
 
 position = Vector2( 618.005, 342.661 )
 scale = Vector2( 13.2193, 6.17504 )
-stream = ExtResource( 7 )
+stream = ExtResource( 9 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = true
@@ -92,3 +97,5 @@ bus = "Master"
 area_mask = 1
 
 [connection signal="score" from="Boat" to="UIContainer/UI" method="_on_Boat_score"]
+
+
