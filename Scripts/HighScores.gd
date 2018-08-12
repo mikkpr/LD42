@@ -13,7 +13,7 @@ func _on_BackButton_pressed():
 	get_tree().change_scene("res://Scenes/MainMenu.tscn")
 
 func load_complete(json):
-
+	
 	for i in range(json.size()):
 		var score = json[i]
 		var nickname = score.nickname
