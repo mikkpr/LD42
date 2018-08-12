@@ -15,6 +15,7 @@ func store(child):
 		emit_signal("overflowed")
 		return false
 	$Contents.add_child(child)
+	child.position = Vector2(0, 0)
 	emit_signal("stored", child)
 	return true
 
