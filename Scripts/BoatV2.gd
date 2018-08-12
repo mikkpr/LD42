@@ -18,6 +18,7 @@ func _process(delta):
 
 func store(flotsam):
 	if active == null || !active.store(flotsam):
+		print("No active Container" if active == null else "Container full")
 		return false
 	tilt += active.coefficient * flotsam.weight
 	score += flotsam.score
@@ -36,7 +37,13 @@ func remove():
 	return flotsam
 
 func _activate(container):
+	print("Activating Container ", container)
 	active = container
 
 func _deactivate(container):
-	active = null
+	# Only deactivate if container is active, because otherwise things
+	# break if we get out-of-order signals (activate A, activate B,
+	# deactivate A).
+	if active == container:
+		print("Deactivating Container ", container)
+		active = null
