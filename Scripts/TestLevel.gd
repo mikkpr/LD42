@@ -19,7 +19,7 @@ func _process(delta):
 	
 	var seconds_left = int(timer.time_left)
 
-	if seconds_left == 178:
+	if seconds_left == 0:
 		_initialize_end_screen()
 	
 	pass
