@@ -4,10 +4,19 @@ const urlBase = "http://ludumdare.nikitech.eu"
 const listUrl = "/list_scores.php"
 const postUrl = "/upload_score.php"
 
-func listScores():
+var thread = Thread.new()
+
+signal load_complete
+
+func list_scores_async():
+	if thread.is_active():
+		return
+	thread.start(self, "list_scores")
+	
+func list_scores(required_parameter_for_thread):
 	return request(HTTPClient.METHOD_GET, listUrl, null)
 
-func postScore(nickname, score):
+func post_score(nickname, score):
 	var payload = "nickname=" + str(nickname) + "&score=" + str(score)
 	return request(HTTPClient.METHOD_POST, postUrl, payload)
 
@@ -63,7 +72,12 @@ func request(method, url, payload):
 
 	var text = rb.get_string_from_ascii()
 	print("Response: " + str(text))
-	return JSON.parse(text).result
+	var json = JSON.parse(text).result
+	http.close()
+	
+	emit_signal("load_complete", json)
+	
+	return json
 
 
 

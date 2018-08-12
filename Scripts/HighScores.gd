@@ -6,13 +6,16 @@ onready var networking = $Networking
 
 func _ready():
 	
-	print(networking.postScore("test-new", 50))
-	
-	var scoreValues = networking.listScores()
-	var maxScores = 5
+	networking.connect("load_complete", self, "load_complete")
+	networking.list_scores_async()
 
-	for i in range(clamp(scoreValues.size(), 0, maxScores)):
-		var score = scoreValues[i]
+func _on_BackButton_pressed():
+	get_tree().change_scene("res://Scenes/MainMenu.tscn")
+
+func load_complete(json):
+
+	for i in range(json.size()):
+		var score = json[i]
 		var nickname = score.nickname
 		var value = score.score
 		var scoreRow = ScoreRow.instance()
@@ -26,6 +29,14 @@ func _ready():
 		scoreRow.find_node("Nickname").text = nickname
 		scoreRow.find_node("Score").text = value
 		scoresContainer.add_child(scoreRow)
+	
+	
 
-func _on_BackButton_pressed():
-	get_tree().change_scene("res://Scenes/MainMenu.tscn")
+
+
+
+
+
+
+
+
