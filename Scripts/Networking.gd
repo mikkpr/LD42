@@ -9,7 +9,7 @@ func listScores():
 
 func postScore(nickname, score):
 	var payload = "nickname=" + str(nickname) + "&score=" + str(score)
-	request(HTTPClient.METHOD_POST, postUrl, payload)
+	return request(HTTPClient.METHOD_POST, postUrl, payload)
 
 func request(method, url, payload):
 	var err = 0

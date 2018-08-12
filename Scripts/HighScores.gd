@@ -5,6 +5,9 @@ onready var scoresContainer = $UI/MarginContainer/Scores
 onready var networking = $Networking
 
 func _ready():
+	
+	print(networking.postScore("test-new", 50))
+	
 	var scoreValues = networking.listScores()
 	var maxScores = 5
 
