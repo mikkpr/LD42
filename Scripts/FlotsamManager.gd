@@ -14,42 +14,48 @@ var flotsam_kinds = {
 		"score_range": Vector2(50, 70),
 		"floating": "medium_float",
 		"dragged": "shark_dragged",
-		"stored": "shark_stored"
+		"stored": "shark_stored",
+		"rarity": 3
 	},
 	"fish": {
 		"weight_range": Vector2(3, 4),
 		"score_range": Vector2(30, 40),
 		"floating": "small_float",
 		"dragged": "fish_dragged",
-		"stored": "fish_stored"
+		"stored": "fish_stored",
+		"rarity": 2
 	},
 	"goldfish": {
 		"weight_range": Vector2(1, 2),
 		"score_range": Vector2(80, 188),
 		"floating": "small_float",
 		"dragged": "goldfish_dragged",
-		"stored": "goldfish_stored"
+		"stored": "goldfish_stored",
+		"rarity": 7
 	},
 	"whale": {
 		"weight_range": Vector2(8, 10),
 		"score_range": Vector2(80, 100),
 		"floating": "big_float",
 		"dragged": "whale_dragged",
-		"stored": "whale_stored"
+		"stored": "whale_stored",
+		"rarity": 4
 	},
 	"mermaid": {
 		"weight_range": Vector2(3, 6),
 		"score_range": Vector2(140, 150),
 		"floating": "medium_float",
 		"dragged": "mermaid_dragged",
-		"stored": "mermaid_stored"
+		"stored": "mermaid_stored",
+		"rarity": 8
 	},
 	"shoe": {
 		"weight_range": Vector2(1, 1),
 		"score_range": Vector2(0, 3),
 		"floating": "small_float",
 		"dragged": "shoe_dragged",
-		"stored": "shoe_stored"
+		"stored": "shoe_stored",
+		"rarity": 7
 	}
 }
 
@@ -61,11 +67,17 @@ func spawn_flotsam(position, weight, score, kind):
 
 func _on_Timer_timeout():
 	$Timer.wait_time = rand_range(TIMER_MIN, TIMER_MAX)
-	var keys = flotsam_kinds.keys()
-	var kind = flotsam_kinds[keys[randi() % keys.size()]]
+	var kind = _rand_flotsam()
 	var right_side = get_viewport().get_visible_rect().size.x
 	spawn_flotsam(Vector2(right_side, _rand_range(Vector2(FLOTSAM_SPAWN_Y - 30, FLOTSAM_SPAWN_Y + 30))),
 			_rand_range(kind["weight_range"]), _rand_range(kind["score_range"]), kind)
 
 func _rand_range(vec2):
 	return vec2.x + (randi() % int(vec2.y - vec2.x + 1))
+	
+func _rand_flotsam():
+	var keys = flotsam_kinds.keys()
+	var flotsamWithRarity = flotsam_kinds[keys[randi() % keys.size()]]
+	if (randi()%11+1) < flotsamWithRarity["rarity"]:
+		flotsamWithRarity = _rand_flotsam()
+	return flotsamWithRarity
