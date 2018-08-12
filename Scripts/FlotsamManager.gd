@@ -6,6 +6,7 @@ export (Texture) var grabbed_texture
 export (Texture) var squashed_texture
 
 var flotsam = load("res://Scenes/Flotsam.tscn")
+var dragging = null # Flotsam we are currently dragging.
 
 var flotsam_animation_names = {
 	"shark": {

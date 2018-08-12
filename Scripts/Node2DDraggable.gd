@@ -15,8 +15,8 @@ func _process(delta):
 func _input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT:
 		if event.pressed and status == DRAG_STATUSES.released and can_be_dragged:
-			status = DRAG_STATUSES.grabbed
-			grab_callback()
+			if grab_callback():
+				status = DRAG_STATUSES.grabbed
 		if not event.pressed and status == DRAG_STATUSES.grabbed:
-			status = DRAG_STATUSES.released
-			drop_callback()
+			if drop_callback():
+				status = DRAG_STATUSES.released
