@@ -7,6 +7,7 @@ onready var networking = $Networking
 func _ready():
 	$UI/MarginContainer/Scores/Loading.visible = false
 	networking.connect("load_complete", self, "load_complete")
+	
 	pass
 
 func show():
@@ -22,18 +23,13 @@ func load_complete(json):
 	
 	$UI/MarginContainer/Scores/Loading.visible = false
 
-	print("load_complete")
-	
-	#print("Top size: " + str(json.top.size()))
-	#print("Top: " + str(json.top))
-	
 	var scores = json.top
-	for i in range(scores):
-		print(str("in_loop"))
+	for i in range(scores.size()):
+		
 		var score = scores[i]
-
 		var nickname = score.nickname
 		var value = score.score
+		
 		var scoreRow = ScoreRow.instance()
 
 		if nickname == null:
@@ -41,8 +37,7 @@ func load_complete(json):
 
 		if value == null:
 			value = "0"
-		
-		print("Nickname: " + nickname + "; Score: " + score)
+
 		scoreRow.find_node("Nickname").text = nickname
 		scoreRow.find_node("Score").text = value
 		scoresContainer.add_child(scoreRow)
