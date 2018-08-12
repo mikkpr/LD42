@@ -23,7 +23,7 @@ var flotsam_kinds = {
 		"floating": "small_float",
 		"dragged": "fish_dragged",
 		"stored": "fish_stored",
-		"rarity": 2
+		"rarity": 1
 	},
 	"goldfish": {
 		"weight_range": Vector2(1, 2),
@@ -56,6 +56,14 @@ var flotsam_kinds = {
 		"dragged": "shoe_dragged",
 		"stored": "shoe_stored",
 		"rarity": 7
+	},
+		"heavyweight": {
+		"weight_range": Vector2(25, 25),
+		"score_range": Vector2(10, 10),
+		"floating": "big_float",
+		"dragged": "heavyweight_dragged",
+		"stored": "heavyweight_stored",
+		"rarity": 9
 	}
 }
 
