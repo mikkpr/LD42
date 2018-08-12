@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Scripts/BoatV2.gd" type="Script" id=1]
 [ext_resource path="res://Art/Ship_0.png" type="Texture" id=2]
@@ -22,6 +22,7 @@
 [ext_resource path="res://Art/wheel_splash11.png" type="Texture" id=20]
 [ext_resource path="res://Art/wheel_splash12.png" type="Texture" id=21]
 [ext_resource path="res://Assets/Audio/waterwheel.ogg" type="AudioStream" id=22]
+[ext_resource path="res://Assets/Audio/ship2.ogg" type="AudioStream" id=23]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -161,6 +162,17 @@ pitch_scale = 1.0
 autoplay = true
 max_distance = 2000.0
 attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="EngineAudio" type="AudioStreamPlayer2D" parent="." index="4"]
+
+stream = ExtResource( 23 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = true
+max_distance = 2000.0
+attenuation = 1.7411
 bus = "Master"
 area_mask = 1
 

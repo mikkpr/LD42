@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scripts/TestLevel.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Background.tscn" type="PackedScene" id=2]
@@ -10,7 +10,6 @@
 [ext_resource path="res://Scripts/Audio.gd" type="Script" id=8]
 [ext_resource path="res://Assets/Audio/music.ogg" type="AudioStream" id=9]
 [ext_resource path="res://Assets/Audio/ship.ogg" type="AudioStream" id=10]
-[ext_resource path="res://Assets/Audio/ship2.ogg" type="AudioStream" id=11]
 
 [sub_resource type="LineShape2D" id=1]
 
@@ -102,24 +101,11 @@ attenuation = 1.7411
 bus = "Master"
 area_mask = 1
 
-[node name="Boat" type="AudioStreamPlayer2D" parent="Audio" index="1"]
+[node name="Ambient" type="AudioStreamPlayer2D" parent="Audio" index="1"]
 
 position = Vector2( 638.02, 342.661 )
 scale = Vector2( 13.8448, 6.17504 )
 stream = ExtResource( 10 )
-volume_db = 0.0
-pitch_scale = 1.0
-autoplay = true
-max_distance = 2000.0
-attenuation = 1.7411
-bus = "Master"
-area_mask = 1
-
-[node name="Boat2" type="AudioStreamPlayer2D" parent="Audio" index="2"]
-
-position = Vector2( 618.005, 342.661 )
-scale = Vector2( 13.2193, 6.17504 )
-stream = ExtResource( 11 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = true
