@@ -11,12 +11,26 @@ var tilt = 0.0    # Weighted sum of the Flotsam weights.
 var score = 0     # Sum of Flotsam scores.
 var active = null # Current active Container.
 
+func _ready():
+	$WheelSplashAudio.play()
+
 func _process(delta):
 	# TODO: Add better smoothing.
 	rotation_degrees += (tilt * degrees_per_tilt - rotation_degrees) / 2 * delta
 	emit_signal("rotation", rotation_degrees)
+
+	update_waterwheel()
+
 	if abs(rotation_degrees) > degrees_to_sink:
 		emit_signal("sunk")
+
+func update_waterwheel():
+	if rotation_degrees > 5:
+		$WheelSplash.hide()
+		$WheelSplashAudio.volume_db = -100
+	else:
+		$WheelSplash.show()
+		$WheelSplashAudio.volume_db = 0
 
 func store(flotsam):
 	if active == null || !active.store(flotsam):

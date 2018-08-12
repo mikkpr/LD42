@@ -20,6 +20,7 @@ func store(child):
 	$Contents.add_child(child)
 	child.position = Vector2(0, 0)
 	emit_signal("stored", child)
+	$InsertAudio.play()
 	return true
 
 func remove():

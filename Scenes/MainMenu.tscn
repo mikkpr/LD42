@@ -5,7 +5,7 @@
 [ext_resource path="res://Fonts/FontTitles40.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Fonts/FontText40.tres" type="DynamicFont" id=4]
 
-[node name="MainMenu" type="Node"]
+[node name="MainMenu" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -70,9 +70,9 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 392.0
-margin_top = 67.0
+margin_top = 85.0
 margin_right = 687.0
-margin_bottom = 452.0
+margin_bottom = 434.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -113,7 +113,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 141.0
 margin_right = 295.0
-margin_bottom = 385.0
+margin_bottom = 349.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -131,7 +131,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 295.0
-margin_bottom = 46.0
+margin_bottom = 37.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -155,9 +155,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 66.0
+margin_top = 57.0
 margin_right = 295.0
-margin_bottom = 112.0
+margin_bottom = 94.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -181,9 +181,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 132.0
+margin_top = 114.0
 margin_right = 295.0
-margin_bottom = 178.0
+margin_bottom = 151.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -207,9 +207,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 198.0
+margin_top = 171.0
 margin_right = 295.0
-margin_bottom = 244.0
+margin_bottom = 208.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2

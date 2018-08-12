@@ -36,6 +36,13 @@ var flotsam_kinds = {
 		"floating": "big_float",
 		"dragged": "whale_dragged",
 		"stored": "whale_stored"
+	},
+	"mermaid": {
+		"weight_range": Vector2(3, 6),
+		"score_range": Vector2(12, 15),
+		"floating": "medium_float",
+		"dragged": "mermaid_dragged",
+		"stored": "mermaid_stored"
 	}
 }
 
