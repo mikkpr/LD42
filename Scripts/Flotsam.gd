@@ -35,7 +35,7 @@ func paint_initial_texture():
 
 func _process(delta):
 	if flotsam_state == STATES.floating:
-		if position.x < get_parent().flotsam_destroy_line:
+		if position.x < get_parent().FLOTSAM_DESTROY_X:
 			flotsam_state = STATES.dropped
 			can_be_dragged = false
 		else:

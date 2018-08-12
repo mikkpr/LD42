@@ -1,6 +1,7 @@
 extends Node
 
-export var flotsam_destroy_line = 300
+export var FLOTSAM_SPAWN_Y = 400
+export var FLOTSAM_DESTROY_X = 300
 export (Texture) var grabbed_texture
 export (Texture) var squashed_texture
 
@@ -35,4 +36,4 @@ func spawn_flotsam_dict(dict):
 	spawn_flotsam(get_viewport().get_mouse_position(), dict["weight"], dict["score"], dict["drag_texture"], dict["squashed_texture"], true)
 
 func _on_Timer_timeout():
-	spawn_flotsam(Vector2(get_viewport().get_visible_rect().size.x, 300), 3, 10, grabbed_texture, squashed_texture)
+	spawn_flotsam(Vector2(get_viewport().get_visible_rect().size.x, FLOTSAM_SPAWN_Y), 3, 10, grabbed_texture, squashed_texture)
