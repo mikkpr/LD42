@@ -57,7 +57,7 @@ var flotsam_kinds = {
 		"stored": "shoe_stored",
 		"rarity": 7
 	},
-		"heavyweight": {
+	"heavyweight": {
 		"weight_range": Vector2(25, 25),
 		"score_range": Vector2(10, 10),
 		"floating": "big_float",
@@ -66,6 +66,9 @@ var flotsam_kinds = {
 		"rarity": 9
 	}
 }
+
+func _ready():
+	randomize() # Seed RNG.
 
 func spawn_flotsam(position, weight, score, kind):
 	var new_flotsam = flotsam.instance()
