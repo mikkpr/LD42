@@ -18,6 +18,9 @@ enum STATES {
 
 var flotsam_state = STATES.floating
 
+var parent = null
+var boat = null
+
 func init(i_weight, i_score, i_float_animation, i_drag_animation, i_stored_animation):
 	weight = i_weight
 	score = i_score
@@ -30,6 +33,8 @@ func init(i_weight, i_score, i_float_animation, i_drag_animation, i_stored_anima
 func _ready():
 	connect("input_event", self, "_input_event")
 	_change_state(STATES.floating)
+	parent = get_parent()
+	boat = get_tree().get_root().find_node("Boat", true, false)
 
 func paint_initial_texture():
 	$AnimatedSprite.animation = float_animation_name
@@ -49,7 +54,7 @@ func _change_state(new_state):
 
 func _process(delta):
 	if flotsam_state == STATES.floating:
-		if position.x < get_parent().FLOTSAM_DESTROY_X:
+		if position.x < parent.FLOTSAM_DESTROY_X:
 			_change_state(STATES.dropped)
 			can_be_dragged = false
 		else:
@@ -68,18 +73,14 @@ func _process(delta):
 func grab_callback():
 	$AnimatedSprite.animation = drag_animation_name
 	if flotsam_state == STATES.stored:
-		var parent = $"../../../.."
-		var manager = parent.get_parent().get_node("FlotsamManager")
-		parent.remove()
-		manager.add_child(self)
+		boat.remove()
+		parent.add_child(self)
 	_change_state(STATES.dragging)
 	$Label.visible = true
 	print("Flotsam grabbed")
 
 func drop_callback():
 	print(get_viewport().get_mouse_position())
-	var parent = get_parent()
-	var boat = $"../../Boat"
 	parent.remove_child(self)
 	if boat.store(self):
 		$AnimatedSprite.animation = stored_animation_name
