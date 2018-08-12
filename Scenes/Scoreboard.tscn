@@ -1,13 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/Scoreboard.gd" type="Script" id=1]
 [ext_resource path="res://Fonts/FontTitles40.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Fonts/FontText24.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Fonts/FontText40.tres" type="DynamicFont" id=4]
 [ext_resource path="res://Scripts/Networking.gd" type="Script" id=5]
-
-[sub_resource type="Theme" id=1]
-
 
 [node name="Scoreboard" type="Node" index="0"]
 
@@ -16,7 +13,6 @@ _sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect", "Size Flags
 
 [node name="UI" type="MarginContainer" parent="." index="0"]
 
-visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -133,41 +129,16 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 
-[node name="Label" type="Label" parent="UI/MarginContainer/EditContainer" index="0"]
+[node name="TextEdit" type="TextEdit" parent="UI/MarginContainer/EditContainer" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 334.0
-margin_top = -9.0
-margin_right = 496.0
-margin_bottom = 66.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-theme = SubResource( 1 )
-text = "Nickname: "
-align = 2
-valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Margin", "Theme", "Visibility", "custom_colors", "custom_fonts", "custom_styles" ]
-
-[node name="TextEdit" type="TextEdit" parent="UI/MarginContainer/EditContainer" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 513.0
-margin_top = 4.0
-margin_right = 698.0
-margin_bottom = 52.0
+margin_left = 411.0
+margin_top = -2.0
+margin_right = 675.0
+margin_bottom = 46.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -192,18 +163,18 @@ caret_block_mode = false
 caret_blink = false
 caret_blink_speed = 0.65
 caret_moving_by_right_click = true
-_sections_unfolded = [ "Mouse", "Size Flags", "custom_colors" ]
+_sections_unfolded = [ "Mouse", "Rect", "Size Flags", "custom_colors" ]
 
-[node name="Button" type="Button" parent="UI/MarginContainer/EditContainer" index="2"]
+[node name="Button" type="Button" parent="UI/MarginContainer/EditContainer" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 434.0
-margin_top = 83.0
-margin_right = 629.0
-margin_bottom = 132.0
+margin_left = 447.0
+margin_top = 72.0
+margin_right = 642.0
+margin_bottom = 121.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
