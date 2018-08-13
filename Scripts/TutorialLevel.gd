@@ -28,7 +28,6 @@ func tutorial(step):
 			spawn_flotsam("whale")
 		2:
 			show_tip("Look how much the whale is worth!!!")
-			$Boat/Cargo/Container16.disconnect("entered", self, "tutorial")
 			$Boat.connect("rotation", self, "sinking")
 		3:
 			show_tip("Don't let her sink!")
