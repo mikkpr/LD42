@@ -24,6 +24,8 @@ func _process(delta):
 
 func _initialize_end_screen(isSuccess):
 	print("The game is finished, showing end screen")
+	if isSuccess:
+		$Boat.dock()
 	isFinished = true
 	scoreboard.show(isSuccess)
 

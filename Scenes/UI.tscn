@@ -81,7 +81,7 @@ _sections_unfolded = [ "Anchor", "Margin", "Rect", "custom_colors", "custom_font
 [node name="GameTimer" type="Timer" parent="." index="2"]
 
 process_mode = 1
-wait_time = 120.0
+wait_time = 60.0
 one_shot = true
 autostart = true
 
