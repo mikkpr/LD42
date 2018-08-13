@@ -26,10 +26,10 @@ func _ready():
 func tutorial(step):
 	match step:
 		1:
-			show_tip("Drag stuff to boxes")
+			show_tip("Drag stuff you find to boxes")
 			spawn_flotsam("whale")
 		2:
-			show_tip("Look how much the whale is worth!!!")
+			show_tip("Look how much the whale is worth!")
 			$Boat.connect("rotation", self, "sinking")
 		3:
 			#show_tip("Don't let her sink!")
@@ -37,9 +37,9 @@ func tutorial(step):
 		4:
 			left_box.visible = true
 			right_box.get_node("Contents").get_child(0).input_pickable = true
-			show_tip("Dont let her sink! Move whale to the other box!")
+			show_tip("She's about to capsize! Move the whale to the other box!")
 		5:
-			show_tip("Wow this is way better!")
+			show_tip("Much better!")
 			$Boat.connect("rotation", self, "stabilising")
 		6:
 			right_box.visible = true
@@ -87,13 +87,13 @@ func spawn_flotsam(f_kind):
 
 func _on_flotsam_destroyed(kind):
 	spawn_flotsam(kind)
-	show_tip("Don't drop stuff!")
+	show_tip("Don't drop the fish!")
 
 func _on_left_stored(flotsam):
 	# Whatever is put in the left container stays there forever.
 	$Boat.disconnect("rotation", self, "sinking")
 	left_box.get_node("Contents").get_child(0).input_pickable = false
-	show_tip("Shark weighs less but is farther away so it tilts you more!")
+	show_tip("Sharks weigh less, but stuff farther away tilts you more!")
 	spawn_flotsam("shark")
 	tutorial(6)
 

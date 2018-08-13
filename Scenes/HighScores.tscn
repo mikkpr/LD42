@@ -6,8 +6,7 @@
 [ext_resource path="res://Fonts/FontText24.tres" type="DynamicFont" id=4]
 [ext_resource path="res://Scripts/Networking.gd" type="Script" id=5]
 
-
-[node name="HighScores" type="Node" index="0"]
+[node name="HighScores" type="Node"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect", "Size Flags", "custom_constants" ]
@@ -81,7 +80,8 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 3 )
-custom_colors/font_color = Color( 0.517647, 0.215686, 0.215686, 1 )
+custom_colors/font_color = Color( 1, 0.537255, 0.541176, 1 )
+custom_colors/font_color_shadow = Color( 0.027451, 0, 0.211765, 1 )
 text = "Top high scores"
 align = 1
 percent_visible = 1.0
@@ -121,7 +121,8 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 4 )
-custom_colors/font_color = Color( 0.613281, 0.28277, 0.28277, 1 )
+custom_colors/font_color = Color( 1, 0.537255, 0.541176, 1 )
+custom_colors/font_color_shadow = Color( 0.027451, 0, 0.211765, 1 )
 text = "Loading scores..."
 align = 1
 valign = 1

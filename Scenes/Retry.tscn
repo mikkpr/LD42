@@ -5,7 +5,7 @@
 [ext_resource path="res://Fonts/FontText40.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Scripts/Networking.gd" type="Script" id=4]
 
-[node name="Retry" type="Node" index="0"]
+[node name="Retry" type="Node"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect", "Size Flags", "custom_constants" ]
@@ -45,7 +45,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-color = Color( 0.3125, 0.198975, 0.198975, 0.861843 )
+color = Color( 0.3125, 0.198975, 0.198975, 0 )
 _sections_unfolded = [ "Rect" ]
 
 [node name="MarginContainer" type="VBoxContainer" parent="UI" index="1"]
@@ -82,7 +82,8 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 2 )
-custom_colors/font_color = Color( 0.71875, 0.036499, 0.036499, 1 )
+custom_colors/font_color = Color( 1, 0.537255, 0.541176, 1 )
+custom_colors/font_color_shadow = Color( 0.027451, 0, 0.211765, 1 )
 text = "You failed miserably"
 align = 1
 uppercase = true
