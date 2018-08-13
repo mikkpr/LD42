@@ -17,7 +17,7 @@ custom_solver_bias = 0.0
 normal = Vector2( 0, -1 )
 d = 31.6592
 
-[node name="Node" type="Node2D"]
+[node name="Node" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
@@ -43,20 +43,22 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 0.0
-margin_right = 1209.0
+margin_right = 1216.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect" ]
 
 [node name="UI" parent="UIContainer" index="0" instance=ExtResource( 6 )]
 
 anchor_left = 1.0
-margin_left = -1025.0
-margin_top = 2.0
-margin_bottom = 2.0
+margin_left = -1280.0
+margin_bottom = 720.0
+mouse_filter = 2
+_sections_unfolded = [ "Mouse", "Rect" ]
 
 [node name="Waterline" type="Area2D" parent="." index="5" groups=[
 "waterline",
@@ -119,8 +121,8 @@ area_mask = 1
 
 [connection signal="score" from="Boat" to="UIContainer/UI" method="_on_Boat_score"]
 
-[connection signal="sunk" from="Boat" to="." method="_on_Boat_sunk"]
-
 [connection signal="sunk" from="Boat" to="UIContainer/UI" method="_on_Boat_sunk"]
+
+[connection signal="sunk" from="Boat" to="." method="_on_Boat_sunk"]
 
 
