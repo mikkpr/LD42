@@ -53,10 +53,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 47.0
-margin_top = 148.0
-margin_right = 436.0
-margin_bottom = 589.0
+margin_left = 100.0
+margin_top = 100.0
+margin_right = 395.0
+margin_bottom = 620.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -71,10 +71,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 110.0
-margin_top = 116.0
-margin_right = 279.0
-margin_bottom = 324.0
+margin_left = 63.0
+margin_top = 156.0
+margin_right = 232.0
+margin_bottom = 364.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -209,8 +209,6 @@ _sections_unfolded = [ "custom_fonts" ]
 [connection signal="pressed" from="MarginContainer/CenterContainer/VBoxContainer/Buttons/TutorialButton" to="." method="_on_TutorialButton_pressed"]
 
 [connection signal="pressed" from="MarginContainer/CenterContainer/VBoxContainer/Buttons/NewGameButton" to="." method="_on_NewGameButton_pressed"]
-
-[connection signal="pressed" from="MarginContainer/CenterContainer/VBoxContainer/Buttons/HighScoresButton" to="." method="_on_NewGameButton_pressed"]
 
 [connection signal="pressed" from="MarginContainer/CenterContainer/VBoxContainer/Buttons/HighScoresButton" to="." method="_on_HighScoresButton_pressed"]
 
