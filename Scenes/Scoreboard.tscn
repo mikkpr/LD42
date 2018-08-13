@@ -140,9 +140,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 100.0
+margin_top = 165.0
 margin_right = 1080.0
-margin_bottom = 100.0
+margin_bottom = 206.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -160,7 +160,6 @@ _sections_unfolded = [ "Margin", "custom_colors", "custom_fonts", "custom_styles
 
 [node name="EditContainer" type="Container" parent="UI/MarginContainer" index="3"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -240,15 +239,14 @@ _sections_unfolded = [ "Visibility", "custom_colors", "custom_fonts" ]
 
 [node name="MenuButton" type="Button" parent="UI/MarginContainer/EditContainer" index="2"]
 
-visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 449.0
-margin_top = 72.0
-margin_right = 644.0
-margin_bottom = 121.0
+margin_left = 451.0
+margin_top = 150.0
+margin_right = 646.0
+margin_bottom = 199.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
