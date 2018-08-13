@@ -1,16 +1,17 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Fonts/FontTitles40.tres" type="DynamicFont" id=1]
-[ext_resource path="res://Fonts/FontText40.tres" type="DynamicFont" id=2]
-[ext_resource path="res://Scripts/Networking.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/Retry.gd" type="Script" id=1]
+[ext_resource path="res://Fonts/FontTitles40.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Fonts/FontText40.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Scripts/Networking.gd" type="Script" id=4]
 
 [node name="Retry" type="Node" index="0"]
 
+script = ExtResource( 1 )
 _sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect", "Size Flags", "custom_constants" ]
 
 [node name="UI" type="MarginContainer" parent="." index="0"]
 
-visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -27,7 +28,7 @@ custom_constants/margin_left = 100
 custom_constants/margin_bottom = 100
 _sections_unfolded = [ "Visibility", "custom_constants" ]
 
-[node name="MarginContainer" type="VBoxContainer" parent="UI" index="0"]
+[node name="ColorRect" type="ColorRect" parent="UI" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -39,12 +40,31 @@ margin_right = 1180.0
 margin_bottom = 620.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0.3125, 0.198975, 0.198975, 0.861843 )
+_sections_unfolded = [ "Rect" ]
+
+[node name="MarginContainer" type="VBoxContainer" parent="UI" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 100.0
+margin_top = 100.0
+margin_right = 1180.0
+margin_bottom = 620.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 0
-_sections_unfolded = [ "Visibility", "custom_constants" ]
+_sections_unfolded = [ "Anchor", "Margin", "Rect", "Size Flags", "Visibility", "custom_constants" ]
 
 [node name="Label" type="Label" parent="UI/MarginContainer" index="0"]
 
@@ -60,14 +80,15 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 1 )
-custom_colors/font_color = Color( 0.517647, 0.215686, 0.215686, 1 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.71875, 0.036499, 0.036499, 1 )
 text = "You failed miserably"
 align = 1
+uppercase = true
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Margin", "custom_colors", "custom_fonts", "custom_styles" ]
+_sections_unfolded = [ "Margin", "Rect", "custom_colors", "custom_fonts", "custom_styles" ]
 
 [node name="ButtonContainer" type="Container" parent="UI/MarginContainer" index="1"]
 
@@ -91,10 +112,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 447.0
-margin_top = 72.0
-margin_right = 642.0
-margin_bottom = 121.0
+margin_left = 476.0
+margin_top = 132.0
+margin_right = 605.0
+margin_bottom = 169.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -102,18 +123,18 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 2 )
+custom_fonts/font = ExtResource( 3 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Retry"
+text = "RETRY"
 flat = false
 align = 1
 _sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
 [node name="Networking" type="Node" parent="." index="1"]
 
-script = ExtResource( 3 )
+script = ExtResource( 4 )
 
 
