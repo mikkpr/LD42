@@ -7,7 +7,7 @@ export(String) var drag_animation_name
 export(String) var stored_animation_name
 
 var fall_speed = 500
-var float_speed = 200
+var float_speed = 180
 
 enum STATES {
 	floating,

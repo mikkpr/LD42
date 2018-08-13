@@ -7,6 +7,8 @@
 script = ExtResource( 1 )
 FLOTSAM_SPAWN_Y = 500
 FLOTSAM_DESTROY_X = 300
+TIMER_MIN = 0.5
+TIMER_MAX = 3.5
 
 [node name="Timer" type="Timer" parent="." index="0"]
 

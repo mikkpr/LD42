@@ -17,7 +17,7 @@ custom_solver_bias = 0.0
 normal = Vector2( 0, -1 )
 d = 31.6592
 
-[node name="Node" type="Node2D" index="0"]
+[node name="Node" type="Node2D"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
@@ -34,8 +34,8 @@ degrees_to_sink = 30
 [node name="FlotsamManager" parent="." index="3" instance=ExtResource( 5 )]
 
 FLOTSAM_DESTROY_X = 0
-TIMER_MIN = 0.5
-TIMER_MAX = 1.5
+TIMER_MIN = 0.4
+TIMER_MAX = 1.0
 
 [node name="UIContainer" type="Container" parent="." index="4"]
 

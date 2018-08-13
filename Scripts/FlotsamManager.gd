@@ -11,7 +11,7 @@ var dragging = null # Flotsam we are currently dragging.
 var flotsam_kinds = {
 	"shark": {
 		"weight_range": Vector2(5, 7),
-		"score_range": Vector2(50, 70),
+		"score_range": Vector2(50, 90),
 		"floating": "medium_float",
 		"dragged": "shark_dragged",
 		"stored": "shark_stored",
@@ -31,11 +31,11 @@ var flotsam_kinds = {
 		"floating": "small_float",
 		"dragged": "goldfish_dragged",
 		"stored": "goldfish_stored",
-		"rarity": 7
+		"rarity": 9
 	},
 	"whale": {
 		"weight_range": Vector2(8, 10),
-		"score_range": Vector2(80, 100),
+		"score_range": Vector2(80, 120),
 		"floating": "big_float",
 		"dragged": "whale_dragged",
 		"stored": "whale_stored",
@@ -43,11 +43,11 @@ var flotsam_kinds = {
 	},
 	"mermaid": {
 		"weight_range": Vector2(3, 6),
-		"score_range": Vector2(140, 150),
+		"score_range": Vector2(100, 150),
 		"floating": "medium_float",
 		"dragged": "mermaid_dragged",
 		"stored": "mermaid_stored",
-		"rarity": 8
+		"rarity": 9
 	},
 	"shoe": {
 		"weight_range": Vector2(1, 1),
@@ -63,7 +63,7 @@ var flotsam_kinds = {
 		"floating": "big_float",
 		"dragged": "heavyweight_dragged",
 		"stored": "heavyweight_stored",
-		"rarity": 9
+		"rarity": 10
 	}
 }
 
