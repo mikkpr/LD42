@@ -34,6 +34,7 @@ func tutorial(step):
 			pass
 		4:
 			left_box.visible = true
+			right_box.get_node("Contents").get_child(0).input_pickable = true
 			show_tip("Dont let her sink! Move whale to the other box!")
 		5:
 			show_tip("Wow this is way better!")
@@ -95,10 +96,10 @@ func _on_left_removed(flotsam):
 	pass
 
 func _on_right_stored(flotsam):
+	right_box.get_node("Contents").get_child(0).input_pickable = false
 	if flotsam.stored_animation_name == "whale_stored":
 		tutorial(2)
 	else:
-		right_box.get_node("Contents").get_child(0).input_pickable = false
 		tutorial(7)
 
 func _on_right_removed(flotsam):
