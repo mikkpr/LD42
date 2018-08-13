@@ -42,11 +42,9 @@ func tutorial(step):
 			right_box.visible = true
 		7:
 			show_tip("Great job!")
-			$Boat.connect("docked", self, "_on_boat_docked")
 			$Boat.call_deferred("dock")
+			$Scoreboard.show(false)
 
-func _on_boat_docked():
-	$Scoreboard.show(false)
 
 func sinking(amount):
 	if amount > 20:

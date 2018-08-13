@@ -3,7 +3,6 @@ extends Node2D
 signal rotation(degrees) # Emitted when the rotation has updated.
 signal score(score)      # Emitted when the score has updated.
 signal sunk              # Emitted when the boat has sunk.
-signal docked            # Emitted when the boat has docked
 
 export (float) var degrees_per_tilt = 1.0 # How many degrees to tilt per weight.
 export (int) var degrees_to_sink = 30     # At how many degrees to sink.
@@ -48,8 +47,6 @@ func _process(delta):
 		if (global_transform.origin.x > view_size.x + 500 or
 				global_transform.origin.y > view_size.y + 300):
 			queue_free()
-			if state == DOCKING:
-				emit_signal("docked")
 
 func _update_waterwheel():
 	if rotation_degrees > 5:
