@@ -13,8 +13,11 @@ func _ready():
 
 	pass
 
-func show():
-	$UI.show()
+func show(isSuccess):
+	if isSuccess:
+		$UI.show()
+	else:
+		$RetryUI.show()
 
 func postScore(score):
 	$UI/MarginContainer/Scores/Loading.visible = true

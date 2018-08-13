@@ -2,30 +2,36 @@ extends Node2D
 
 onready var timer = $UIContainer/UI/GameTimer
 onready var scoreboard = $Scoreboard
-onready var button = $Scoreboard/UI/MarginContainer/EditContainer/Button
+onready var submitButton = $Scoreboard/UI/MarginContainer/EditContainer/Button
+onready var retryButton = $Scoreboard/RetryUI/MarginContainer/ButtonContainer/Button
 
 var isFinished = false
 
 func _ready():
-	button.connect("pressed", self, "button_pressed")
+	submitButton.connect("pressed", self, "submit_button_pressed")
+	retryButton.connect("pressed", self, "retry_button_pressed")
 
 func _process(delta):
 	if isFinished:
 		return
 
 	var seconds_left = int(timer.time_left)
-	if seconds_left == 0:
-		_initialize_end_screen()
 
-func _initialize_end_screen():
+	if seconds_left == 0:
+		_initialize_end_screen(true)
+
+func _initialize_end_screen(isSuccess):
 	print("The game is finished, showing end screen")
 	isFinished = true
-	scoreboard.show()
+	scoreboard.show(isSuccess)
 
-func button_pressed():
-	print("button_pressed")
+func _on_Boat_sunk():
+	_initialize_end_screen(false)
+	
+func retry_button_pressed():
+	print("TODO")
+	
+func submit_button_pressed():
 	var score = $UIContainer/UI/TotalLabel.get_score()
 	scoreboard.postScore(score)
 
-func _on_Boat_sunk():
-	_initialize_end_screen() # TODO: show failure screen
