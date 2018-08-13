@@ -14,17 +14,59 @@ func _ready():
 	$FlotsamManager/Timer.stop()
 	$UIContainer/UI/GameTimer.paused = true
 	$UIContainer/UI/TimerLabel.visible = false
-	spawn_flotsam("whale")
-
 	left_box.visible = false
 	left_box.connect("stored", self, "_on_left_stored")
 	left_box.connect("removed", self, "_on_left_removed")
 	right_box.connect("stored", self, "_on_right_stored")
 	right_box.connect("removed", self, "_on_right_removed")
+	tutorial(1)
+
+func tutorial(step):
+	match step:
+		1:
+			show_tip("Drag stuff to boxes")
+			spawn_flotsam("whale")
+			$Boat/Cargo/Container16.connect("entered", self, "tutorial", [2])
+		2:
+			show_tip("Look how much the whale is worth!!!")
+			$Boat/Cargo/Container16.disconnect("entered", self, "tutorial")
+			$Boat.connect("rotation", self, "sinking")
+		3:
+			show_tip("Don't let her sink!")
+		4:
+			show_tip("Move whale to the other box!")
+			$Boat.connect("rotation", self, "stabilising")
+		5:
+			show_tip("Wow this is way better!")
+		6:
+			show_tip("Shark weighs less but is farther away so it tilts you more!")
+			spawn_flotsam("shark")
+			$Boat/Cargo/Container16.connect("entered", self, "tutorial", [7])
+		7:
+			show_tip("Great job!")
+			$Boat.dock()
+
+func sinking(amount):
+	if amount > 40:
+		$Boat.disconnect("rotation", self, "sinking")
+		tutorial(4)
+	if amount > 20:
+		tutorial(3)
+
+func stabilising(amount):
+	if amount < 40:
+		$Boat.disconnect("rotatioN", self, "stabilising")
+		tutorial(6)
+	if amount < 30:
+		tutorial(5)
 
 func _process(delta):
 	if isFinished:
 		return
+
+func show_tip(message):
+	$UIContainer/UI/GuidanceLabel.text = message
+	$UIContainer/UI/GuidanceLabel.show()
 
 func _initialize_end_screen():
 	print("Tutorial DONE")
@@ -46,6 +88,7 @@ func spawn_flotsam(f_kind):
 
 func _on_flotsam_destroyed(kind):
 	spawn_flotsam(kind)
+	show_tip("Don't drop stuff!")
 
 func _on_left_stored(flotsam):
 	pass
