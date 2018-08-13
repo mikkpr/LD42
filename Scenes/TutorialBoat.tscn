@@ -1,0 +1,114 @@
+[gd_scene load_steps=26 format=2]
+
+[ext_resource path="res://Scripts/BoatV2.gd" type="Script" id=1]
+[ext_resource path="res://Art/Ship_0.png" type="Texture" id=2]
+[ext_resource path="res://Art/Ship_1.png" type="Texture" id=3]
+[ext_resource path="res://Art/ship_2.png" type="Texture" id=4]
+[ext_resource path="res://Art/ship_3.png" type="Texture" id=5]
+[ext_resource path="res://Art/ship_4.png" type="Texture" id=6]
+[ext_resource path="res://Art/ship_5.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/ContainerV2.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Art/wheel_splash00.png" type="Texture" id=9]
+[ext_resource path="res://Art/wheel_splash01.png" type="Texture" id=10]
+[ext_resource path="res://Art/wheel_splash02.png" type="Texture" id=11]
+[ext_resource path="res://Art/wheel_splash03.png" type="Texture" id=12]
+[ext_resource path="res://Art/wheel_splash04.png" type="Texture" id=13]
+[ext_resource path="res://Art/wheel_splash05.png" type="Texture" id=14]
+[ext_resource path="res://Art/wheel_splash06.png" type="Texture" id=15]
+[ext_resource path="res://Art/wheel_splash07.png" type="Texture" id=16]
+[ext_resource path="res://Art/wheel_splash08.png" type="Texture" id=17]
+[ext_resource path="res://Art/wheel_splash09.png" type="Texture" id=18]
+[ext_resource path="res://Art/wheel_splash10.png" type="Texture" id=19]
+[ext_resource path="res://Art/wheel_splash11.png" type="Texture" id=20]
+[ext_resource path="res://Art/wheel_splash12.png" type="Texture" id=21]
+[ext_resource path="res://Assets/Audio/waterwheel.ogg" type="AudioStream" id=22]
+[ext_resource path="res://Assets/Audio/ship2.ogg" type="AudioStream" id=23]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
+
+[node name="Boat" type="Node2D"]
+
+script = ExtResource( 1 )
+degrees_per_tilt = 1.0
+degrees_to_sink = 90
+unsinkable = false
+
+[node name="Sprite" type="AnimatedSprite" parent="." index="0"]
+
+position = Vector2( -38.9059, 0.540344 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 1 )
+animation = "default"
+frame = 3
+playing = true
+
+[node name="Cargo" type="Node2D" parent="." index="1"]
+
+[node name="Container12" parent="Cargo" index="0" instance=ExtResource( 8 )]
+
+position = Vector2( -18.007, -12.8803 )
+coefficient = -1.0
+
+[node name="Container16" parent="Cargo" index="1" instance=ExtResource( 8 )]
+
+position = Vector2( 185.487, -12.8803 )
+coefficient = 4.0
+
+[node name="WheelSplash" type="AnimatedSprite" parent="." index="2"]
+
+modulate = Color( 1, 1, 1, 0.677961 )
+position = Vector2( -393.38, 34.6421 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 2 )
+animation = "default"
+frame = 4
+playing = true
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="WheelSplashAudio" type="AudioStreamPlayer2D" parent="." index="3"]
+
+stream = ExtResource( 22 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = true
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="EngineAudio" type="AudioStreamPlayer2D" parent="." index="4"]
+
+stream = ExtResource( 23 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = true
+max_distance = 2000.0
+attenuation = 1.7411
+bus = "Master"
+area_mask = 1
+
+[connection signal="entered" from="Cargo/Container12" to="." method="_activate"]
+
+[connection signal="exited" from="Cargo/Container12" to="." method="_deactivate"]
+
+[connection signal="entered" from="Cargo/Container16" to="." method="_activate"]
+
+[connection signal="exited" from="Cargo/Container16" to="." method="_deactivate"]
+
+
