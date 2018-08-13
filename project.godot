@@ -10,10 +10,10 @@ config_version=3
 
 [application]
 
-config/name="LD42"
+config/name="Sea Saw"
 run/main_scene="res://Scenes/MainMenu.tscn"
-boot_splash/image="res://Art/background.png"
-config/icon="res://icon.png"
+boot_splash/image="res://Art/mainmenubackground.png"
+config/icon="res://Art/whitewhale_container3.png"
 
 [display]
 
