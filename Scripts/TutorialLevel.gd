@@ -89,7 +89,8 @@ func _on_flotsam_destroyed(kind):
 	show_tip("Don't drop stuff!")
 
 func _on_left_stored(flotsam):
-	pass
+	# Whatever is put in the left container stays there forever.
+	left_box.get_node("Contents").get_child(0).input_pickable = false
 
 func _on_left_removed(flotsam):
 	pass
@@ -101,4 +102,5 @@ func _on_right_stored(flotsam):
 		tutorial(7)
 
 func _on_right_removed(flotsam):
-	pass
+	# You can only remove once from the right container.
+	right_box.visible = false
