@@ -10,7 +10,7 @@ config_version=3
 
 [application]
 
-config/name="Sea Saw"
+config/name="Seasaw"
 run/main_scene="res://Scenes/MainMenu.tscn"
 boot_splash/image="res://Art/mainmenubackground.png"
 config/icon="res://Art/whitewhale_container3.png"
