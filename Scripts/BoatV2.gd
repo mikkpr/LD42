@@ -6,6 +6,7 @@ signal sunk              # Emitted when the boat has sunk.
 
 export (float) var degrees_per_tilt = 1.0 # How many degrees to tilt per weight.
 export (int) var degrees_to_sink = 30     # At how many degrees to sink.
+export (bool) var unsinkable = false      # If true, then the Boat is unsinkable.
 
 const leave_speed = 100 # How fast the boat leaves (pixels/sec).
 
@@ -22,6 +23,8 @@ var state = SAILING
 
 func _process(delta):
 	rotation_degrees += (tilt * degrees_per_tilt - rotation_degrees) / 2 * delta
+	if unsinkable && abs(rotation_degrees) > degrees_to_sink:
+		rotation_degrees = (1 if tilt > 0 else -1) * degrees_to_sink
 	emit_signal("rotation", rotation_degrees)
 
 	if state == SAILING:

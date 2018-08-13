@@ -30,6 +30,7 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( 509.931, 352.54 )
 degrees_to_sink = 30
+unsinkable = false
 
 [node name="FlotsamManager" parent="." index="3" instance=ExtResource( 5 )]
 
