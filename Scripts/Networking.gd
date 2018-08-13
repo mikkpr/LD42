@@ -83,7 +83,7 @@ func request(method, url, payload):
 	http.close()
 
 	emit_signal("load_complete", json)
-
+	thread.wait_to_finish()
 	return json
 
 
