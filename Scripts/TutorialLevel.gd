@@ -26,7 +26,6 @@ func tutorial(step):
 		1:
 			show_tip("Drag stuff to boxes")
 			spawn_flotsam("whale")
-			$Boat/Cargo/Container16.connect("entered", self, "tutorial", [2])
 		2:
 			show_tip("Look how much the whale is worth!!!")
 			$Boat/Cargo/Container16.disconnect("entered", self, "tutorial")
@@ -34,6 +33,7 @@ func tutorial(step):
 		3:
 			show_tip("Don't let her sink!")
 		4:
+			left_box.visible = true
 			show_tip("Move whale to the other box!")
 			$Boat.connect("rotation", self, "stabilising")
 		5:
@@ -41,23 +41,22 @@ func tutorial(step):
 		6:
 			show_tip("Shark weighs less but is farther away so it tilts you more!")
 			spawn_flotsam("shark")
-			$Boat/Cargo/Container16.connect("entered", self, "tutorial", [7])
 		7:
 			show_tip("Great job!")
 			$Boat.dock()
 
 func sinking(amount):
-	if amount > 40:
+	if amount > 20:
 		$Boat.disconnect("rotation", self, "sinking")
 		tutorial(4)
-	if amount > 20:
+	elif amount > 10:
 		tutorial(3)
 
 func stabilising(amount):
-	if amount < 40:
-		$Boat.disconnect("rotatioN", self, "stabilising")
+	if amount < 20:
+		$Boat.disconnect("rotation", self, "stabilising")
 		tutorial(6)
-	if amount < 30:
+	elif amount < 10:
 		tutorial(5)
 
 func _process(delta):
@@ -97,7 +96,10 @@ func _on_left_removed(flotsam):
 	pass
 
 func _on_right_stored(flotsam):
-	pass
+	if flotsam.stored_animation_name == "whale_stored":
+		tutorial(2)
+	else:
+		tutorial(7)
 
 func _on_right_removed(flotsam):
 	pass
