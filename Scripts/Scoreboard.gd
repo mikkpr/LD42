@@ -13,6 +13,10 @@ func _ready():
 
 	pass
 
+func _process(delta):
+	$UI/MarginContainer/Label.margin_top = 10
+	pass
+	
 func show(isSuccess):
 	if isSuccess:
 		$UI.show()
@@ -22,14 +26,14 @@ func show(isSuccess):
 func postScore(score):
 	$UI/MarginContainer/Scores/Loading.visible = true
 	$UI/MarginContainer/Label.visible = false
-
+	$UI/MarginContainer/EditContainer.visible = false
+	
 	var nickname = $UI/MarginContainer/EditContainer/TextEdit.text
 	networking.post_score_async(nickname, score)
 
 func load_complete(json):
 
 	$UI/MarginContainer/Scores/Loading.visible = false
-	$UI/MarginContainer/EditContainer.visible = false
 	$UI/MarginContainer/Label.visible = true
 	$UI/MarginContainer/Label.text = "TOP SCORES"
 
@@ -54,6 +58,12 @@ func load_complete(json):
 		
 	$UI/MarginContainer/PositionLabel.visible = true
 	$UI/MarginContainer/PositionLabel.text = "Your position: " + str(json.position)
+	
+	$UI/MarginContainer/EditContainer.visible = true
+	$UI/MarginContainer/EditContainer/Button.visible = false
+	$UI/MarginContainer/EditContainer/TextEdit.visible = false
+	
+	$UI/MarginContainer/EditContainer/MenuButton.visible = true
 
 
 

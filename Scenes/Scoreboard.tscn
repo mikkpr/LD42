@@ -7,14 +7,13 @@
 [ext_resource path="res://Scripts/Networking.gd" type="Script" id=5]
 [ext_resource path="res://Scenes/Retry.tscn" type="PackedScene" id=6]
 
-[node name="Scoreboard" type="Node"]
+[node name="Scoreboard" type="Node" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect", "Size Flags", "custom_constants" ]
 
 [node name="UI" type="MarginContainer" parent="." index="0"]
 
-editor/display_folded = true
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
@@ -32,7 +31,25 @@ custom_constants/margin_left = 100
 custom_constants/margin_bottom = 100
 _sections_unfolded = [ "Visibility", "custom_constants" ]
 
-[node name="MarginContainer" type="VBoxContainer" parent="UI" index="0"]
+[node name="ColorRect" type="ColorRect" parent="UI" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 100.0
+margin_top = 100.0
+margin_right = 1180.0
+margin_bottom = 620.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0.167969, 0.121384, 0.121384, 0.541412 )
+
+[node name="MarginContainer" type="VBoxContainer" parent="UI" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -117,16 +134,40 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
-[node name="EditContainer" type="Container" parent="UI/MarginContainer" index="2"]
+[node name="PositionLabel" type="Label" parent="UI/MarginContainer" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 100.0
+margin_right = 1080.0
+margin_bottom = 100.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.517647, 0.215686, 0.215686, 1 )
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Margin", "custom_colors", "custom_fonts", "custom_styles" ]
+
+[node name="EditContainer" type="Container" parent="UI/MarginContainer" index="3"]
 
 editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 165.0
+margin_top = 256.0
 margin_right = 1080.0
-margin_bottom = 165.0
+margin_bottom = 256.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -192,33 +233,38 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Submit"
+text = "SUBMIT"
 flat = false
 align = 1
-_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+_sections_unfolded = [ "Visibility", "custom_colors", "custom_fonts" ]
 
-[node name="PositionLabel" type="Label" parent="UI/MarginContainer" index="3"]
+[node name="MenuButton" type="Button" parent="UI/MarginContainer/EditContainer" index="2"]
 
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 1080.0
-margin_bottom = 41.0
+margin_left = 449.0
+margin_top = 72.0
+margin_right = 644.0
+margin_bottom = 121.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
-mouse_filter = 2
+focus_mode = 2
+mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_fonts/font = ExtResource( 2 )
-custom_colors/font_color = Color( 0.517647, 0.215686, 0.215686, 1 )
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 4 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "MENU"
+flat = false
 align = 1
-valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "custom_colors", "custom_fonts", "custom_styles" ]
+_sections_unfolded = [ "Visibility", "custom_colors", "custom_fonts" ]
 
 [node name="Networking" type="Node" parent="." index="1"]
 
