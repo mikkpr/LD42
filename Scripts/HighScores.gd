@@ -8,11 +8,6 @@ func _ready():
 	networking.connect("load_complete", self, "load_complete")
 	networking.list_scores_async()
 
-	print(networking.post_score_async("test-new", 50))
-
-	var scoreValues = networking.list_scores_async()
-	var maxScores = 5
-
 func _on_BackButton_pressed():
 	get_tree().change_scene("res://Scenes/MainMenu.tscn")
 

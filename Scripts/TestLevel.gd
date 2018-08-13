@@ -12,6 +12,8 @@ func _ready():
 	submitButton.connect("pressed", self, "submit_button_pressed")
 	retryButton.connect("pressed", self, "retry_button_pressed")
 	menuButton.connect("pressed", self, "menu_button_pressed")
+	
+	print("TestLevel _ready()")
 
 func _process(delta):
 	if isFinished:
