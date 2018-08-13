@@ -13,8 +13,7 @@ func _ready():
 	menuButton.connect("pressed", self, "menu_button_pressed")
 	$FlotsamManager/Timer.stop()
 	$UIContainer/UI/GameTimer.paused = true
-	$UIContainer/UI/TimerLabel.text = "8"
-	$UIContainer/UI/TimerLabel.set_rotation(PI*0.45)
+	$UIContainer/UI/TimerLabel.visible = false
 	spawn_flotsam("whale")
 
 	left_box.visible = false
