@@ -99,6 +99,7 @@ func spawn_flotsam(position, weight, score, kind):
 	new_flotsam.init(weight, score, kind["floating"], kind["dragged"], kind["stored"])
 	new_flotsam.global_position = position
 	add_child(new_flotsam)
+	return new_flotsam
 
 func _on_Timer_timeout():
 	$Timer.wait_time = rand_range(TIMER_MIN, TIMER_MAX)

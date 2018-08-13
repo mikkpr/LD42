@@ -22,6 +22,8 @@ var parent = null
 var boat = null
 var Splash = preload("res://Scenes/Splash.tscn")
 
+signal flotsam_destroyed
+
 func init(i_weight, i_score, i_float_animation, i_drag_animation, i_stored_animation):
 	weight = i_weight
 	score = i_score
@@ -70,6 +72,7 @@ func _process(delta):
 	if flotsam_state == STATES.dropped:
 		if global_transform.origin.y > get_viewport().get_visible_rect().size.y:
 			print("Flotsam destroyed")
+			emit_signal("flotsam_destroyed")
 			queue_free()
 		else:
 			var fall_vector = Vector2()
