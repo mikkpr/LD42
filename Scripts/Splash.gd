@@ -5,7 +5,9 @@ func _ready():
 
 func play():
 	$Animation.play('splash')
+	$Audio.play()
 
 func _on_splash_finished():
 	print("destroy splash? %s" % position)
+	$Audio.stop()
 	queue_free()
