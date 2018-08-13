@@ -5,8 +5,11 @@ onready var scoresContainer = $UI/MarginContainer/Scores
 onready var networking = $Networking
 
 func _ready():
-	networking.connect("load_complete", self, "load_complete")
-	networking.list_scores_async()
+#	networking.connect("load_complete", self, "load_complete")
+#	networking.list_scores_async()
+	
+	var scores = networking.list_scores("useless_required_parameter")
+	load_complete(scores)
 
 func _on_BackButton_pressed():
 	get_tree().change_scene("res://Scenes/MainMenu.tscn")

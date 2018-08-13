@@ -9,7 +9,7 @@ func _ready():
 	$UI/MarginContainer/PositionLabel.visible = false
 	$UI/MarginContainer/Label.text = "Enter your nickname"
 
-	networking.connect("load_complete", self, "load_complete")
+#	networking.connect("load_complete", self, "load_complete")
 
 	pass
 
@@ -30,7 +30,9 @@ func postScore(score):
 	$UI/MarginContainer/MenuButton.visible = false
 	
 	var nickname = $UI/MarginContainer/EditContainer/LineEdit.text
-	networking.post_score_async(nickname, score)
+#	networking.post_score_async(nickname, score)
+	var json = networking.post_score({ "nickname" : nickname, "score": score })
+	load_complete(json)
 
 func load_complete(json):
 
