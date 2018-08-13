@@ -28,7 +28,7 @@ func postScore(score):
 	$UI/MarginContainer/Label.visible = false
 	$UI/MarginContainer/EditContainer.visible = false
 	
-	var nickname = $UI/MarginContainer/EditContainer/TextEdit.text
+	var nickname = $UI/MarginContainer/EditContainer/LineEdit.text
 	networking.post_score_async(nickname, score)
 
 func load_complete(json):
@@ -61,7 +61,7 @@ func load_complete(json):
 	
 	$UI/MarginContainer/EditContainer.visible = true
 	$UI/MarginContainer/EditContainer/Button.visible = false
-	$UI/MarginContainer/EditContainer/TextEdit.visible = false
+	$UI/MarginContainer/EditContainer/LineEdit.visible = false
 	
 	$UI/MarginContainer/EditContainer/MenuButton.visible = true
 
