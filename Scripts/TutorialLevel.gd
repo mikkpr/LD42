@@ -43,7 +43,7 @@ func tutorial(step):
 			spawn_flotsam("shark")
 		7:
 			show_tip("Great job!")
-			$Boat.dock()
+			$Boat.call_deferred("dock")
 
 func sinking(amount):
 	if amount > 20:
