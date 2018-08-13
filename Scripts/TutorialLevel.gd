@@ -52,10 +52,10 @@ func sinking(amount):
 		tutorial(3)
 
 func stabilising(amount):
-	if amount < 20:
+	if amount < 10:
 		$Boat.disconnect("rotation", self, "stabilising")
 		tutorial(6)
-	elif amount < 10:
+	elif amount < 20:
 		tutorial(5)
 
 func _process(delta):
