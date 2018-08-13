@@ -4,7 +4,7 @@ onready var GameScene
 
 
 func _on_TutorialButton_pressed():
-    get_tree().change_scene("res://Scenes/Calculator.tscn")
+    get_tree().change_scene("res://Scenes/TutorialLevel.tscn")
 
 
 func _on_NewGameButton_pressed():
