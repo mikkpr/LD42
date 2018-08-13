@@ -11,6 +11,8 @@ func _ready():
 	retryButton.connect("pressed", self, "retry_button_pressed")
 	$Scoreboard/Retry/UI/MarginContainer/Label.text = "Good job! Now on to the real thing!"
 	$Scoreboard/Retry/UI/MarginContainer/ButtonContainer/Button.text = "Continue"
+	$UIContainer/UI/GuidanceLabel.margin_top = 0
+	$UIContainer/UI/GuidanceLabel.margin_bottom = 300
 	$FlotsamManager/Timer.stop()
 	$UIContainer/UI/GameTimer.paused = true
 	$UIContainer/UI/TimerLabel.visible = false
@@ -42,7 +44,7 @@ func tutorial(step):
 		6:
 			right_box.visible = true
 		7:
-			show_tip("Great job!")
+			hide_tip()
 			$Boat.call_deferred("dock")
 			$Scoreboard.show(false)
 
@@ -66,6 +68,9 @@ func _process(delta):
 func show_tip(message):
 	$UIContainer/UI/GuidanceLabel.text = message
 	$UIContainer/UI/GuidanceLabel.show()
+
+func hide_tip():
+	$UIContainer/UI/GuidanceLabel.hide()
 
 func retry_button_pressed():
 	get_tree().change_scene("res://Scenes/TestLevel.tscn")
