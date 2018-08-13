@@ -3,6 +3,9 @@ extends Node2D
 onready var retryButton = $Scoreboard/Retry/UI/MarginContainer/ButtonContainer/Button
 onready var menuButton = $Scoreboard/UI/MarginContainer/EditContainer/MenuButton
 
+onready var left_box = $Boat/Cargo.get_child(0)
+onready var right_box = $Boat/Cargo.get_child(1)
+
 var isFinished = false
 
 func _ready():
@@ -13,6 +16,12 @@ func _ready():
 	$UIContainer/UI/TimerLabel.text = "8"
 	$UIContainer/UI/TimerLabel.set_rotation(PI*0.45)
 	spawn_flotsam("whale")
+
+	left_box.visible = false
+	left_box.connect("stored", self, "_on_left_stored")
+	left_box.connect("removed", self, "_on_left_removed")
+	right_box.connect("stored", self, "_on_right_stored")
+	right_box.connect("removed", self, "_on_right_removed")
 
 func _process(delta):
 	if isFinished:
@@ -38,3 +47,15 @@ func spawn_flotsam(f_kind):
 
 func _on_flotsam_destroyed(kind):
 	spawn_flotsam(kind)
+
+func _on_left_stored(flotsam):
+	pass
+
+func _on_left_removed(flotsam):
+	pass
+
+func _on_right_stored(flotsam):
+	pass
+
+func _on_right_removed(flotsam):
+	pass
