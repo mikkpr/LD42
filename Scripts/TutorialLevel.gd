@@ -30,13 +30,14 @@ func tutorial(step):
 			show_tip("Look how much the whale is worth!!!")
 			$Boat.connect("rotation", self, "sinking")
 		3:
-			show_tip("Don't let her sink!")
+			#show_tip("Don't let her sink!")
+			pass
 		4:
 			left_box.visible = true
-			show_tip("Move whale to the other box!")
-			$Boat.connect("rotation", self, "stabilising")
+			show_tip("Dont let her sink! Move whale to the other box!")
 		5:
 			show_tip("Wow this is way better!")
+			$Boat.connect("rotation", self, "stabilising")
 		6:
 			right_box.visible = true
 			show_tip("Shark weighs less but is farther away so it tilts you more!")
@@ -49,15 +50,15 @@ func sinking(amount):
 	if amount > 20:
 		$Boat.disconnect("rotation", self, "sinking")
 		tutorial(4)
-	elif amount > 10:
-		tutorial(3)
+	#elif amount > 10:
+	#	tutorial(3)
 
 func stabilising(amount):
 	if amount < 10:
 		$Boat.disconnect("rotation", self, "stabilising")
 		tutorial(6)
-	elif amount < 20:
-		tutorial(5)
+	#elif amount < 20:
+	#	tutorial(5)
 
 func _process(delta):
 	if isFinished:
@@ -92,6 +93,7 @@ func _on_flotsam_destroyed(kind):
 func _on_left_stored(flotsam):
 	# Whatever is put in the left container stays there forever.
 	left_box.get_node("Contents").get_child(0).input_pickable = false
+	tutorial(5)
 
 func _on_left_removed(flotsam):
 	pass
@@ -100,6 +102,7 @@ func _on_right_stored(flotsam):
 	if flotsam.stored_animation_name == "whale_stored":
 		tutorial(2)
 	else:
+		right_box.get_node("Contents").get_child(0).input_pickable = false
 		tutorial(7)
 
 func _on_right_removed(flotsam):
