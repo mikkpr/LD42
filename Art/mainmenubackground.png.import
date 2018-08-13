@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/maidmere_1.png-4b1db6f08cf2d4f62049a51791acde80.stex"
+path="res://.import/mainmenubackground.png-a41b9fe11b4d783126ecfd7c9ae03893.stex"
 
 [deps]
 
-source_file="res://Art/maidmere_1.png"
-dest_files=[ "res://.import/maidmere_1.png-4b1db6f08cf2d4f62049a51791acde80.stex" ]
+source_file="res://Art/mainmenubackground.png"
+dest_files=[ "res://.import/mainmenubackground.png-a41b9fe11b4d783126ecfd7c9ae03893.stex" ]
 
 [params]
 
