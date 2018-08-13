@@ -29,7 +29,7 @@ func _on_Boat_sunk():
 	_initialize_end_screen(false)
 	
 func retry_button_pressed():
-	print("TODO")
+	get_tree().change_scene("res://Scenes/TestLevel.tscn")
 	
 func submit_button_pressed():
 	var score = $UIContainer/UI/TotalLabel.get_score()
