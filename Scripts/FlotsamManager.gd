@@ -41,12 +41,28 @@ var flotsam_kinds = {
 		"stored": "whale_stored",
 		"rarity": 4
 	},
+	"whitewhale": {
+		"weight_range": Vector2(9, 16),
+		"score_range": Vector2(100, 200),
+		"floating": "big_float",
+		"dragged": "whitewhale_dragged",
+		"stored": "whitewhale_stored",
+		"rarity": 10
+	},
 	"mermaid": {
 		"weight_range": Vector2(3, 6),
 		"score_range": Vector2(100, 150),
 		"floating": "medium_float",
 		"dragged": "mermaid_dragged",
 		"stored": "mermaid_stored",
+		"rarity": 9
+	},
+	"maidmere": {
+		"weight_range": Vector2(3, 6),
+		"score_range": Vector2(110, 160),
+		"floating": "medium_float",
+		"dragged": "maidmere_dragged",
+		"stored": "maidmere_stored",
 		"rarity": 9
 	},
 	"shoe": {
@@ -64,7 +80,15 @@ var flotsam_kinds = {
 		"dragged": "heavyweight_dragged",
 		"stored": "heavyweight_stored",
 		"rarity": 10
-	}
+	},
+	"rubberducky": {
+		"weight_range": Vector2(1, 1),
+		"score_range": Vector2(5, 10),
+		"floating": "small_float",
+		"dragged": "rubberducky_dragged",
+		"stored": "rubberducky_stored",
+		"rarity": 8
+	},
 }
 
 func _ready():
