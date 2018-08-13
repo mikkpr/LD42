@@ -1,18 +1,20 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/Scoreboard.gd" type="Script" id=1]
 [ext_resource path="res://Fonts/FontTitles40.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Fonts/FontText24.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Fonts/FontText40.tres" type="DynamicFont" id=4]
 [ext_resource path="res://Scripts/Networking.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/Retry.tscn" type="PackedScene" id=6]
 
-[node name="Scoreboard" type="Node" index="0"]
+[node name="Scoreboard" type="Node"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect", "Size Flags", "custom_constants" ]
 
 [node name="UI" type="MarginContainer" parent="." index="0"]
 
+editor/display_folded = true
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
@@ -218,112 +220,10 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors", "custom_fonts", "custom_styles" ]
 
-[node name="RetryUI" type="MarginContainer" parent="." index="1"]
-
-visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-custom_constants/margin_right = 100
-custom_constants/margin_top = 100
-custom_constants/margin_left = 100
-custom_constants/margin_bottom = 100
-_sections_unfolded = [ "Visibility", "custom_constants" ]
-
-[node name="MarginContainer" type="VBoxContainer" parent="RetryUI" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 100.0
-margin_top = 100.0
-margin_right = 1180.0
-margin_bottom = 620.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
-_sections_unfolded = [ "Visibility", "custom_constants" ]
-
-[node name="Label" type="Label" parent="RetryUI/MarginContainer" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 1080.0
-margin_bottom = 30.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_fonts/font = ExtResource( 2 )
-custom_colors/font_color = Color( 0.517647, 0.215686, 0.215686, 1 )
-text = "You failed miserably"
-align = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Margin", "custom_colors", "custom_fonts", "custom_styles" ]
-
-[node name="ButtonContainer" type="Container" parent="RetryUI/MarginContainer" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 165.0
-margin_right = 1080.0
-margin_bottom = 165.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-
-[node name="Button" type="Button" parent="RetryUI/MarginContainer/ButtonContainer" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 447.0
-margin_top = 72.0
-margin_right = 642.0
-margin_bottom = 121.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-custom_fonts/font = ExtResource( 4 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "Retry"
-flat = false
-align = 1
-_sections_unfolded = [ "custom_colors", "custom_fonts" ]
-
-[node name="Networking" type="Node" parent="." index="2"]
+[node name="Networking" type="Node" parent="." index="1"]
 
 script = ExtResource( 5 )
+
+[node name="Retry" parent="." index="2" instance=ExtResource( 6 )]
 
 

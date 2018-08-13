@@ -17,7 +17,7 @@ func show(isSuccess):
 	if isSuccess:
 		$UI.show()
 	else:
-		$RetryUI.show()
+		$Retry/UI.show()
 
 func postScore(score):
 	$UI/MarginContainer/Scores/Loading.visible = true

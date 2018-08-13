@@ -3,7 +3,7 @@ extends Node2D
 onready var timer = $UIContainer/UI/GameTimer
 onready var scoreboard = $Scoreboard
 onready var submitButton = $Scoreboard/UI/MarginContainer/EditContainer/Button
-onready var retryButton = $Scoreboard/RetryUI/MarginContainer/ButtonContainer/Button
+onready var retryButton = $Scoreboard/Retry/UI/MarginContainer/ButtonContainer/Button
 
 var isFinished = false
 
