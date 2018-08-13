@@ -38,6 +38,7 @@ func tutorial(step):
 		5:
 			show_tip("Wow this is way better!")
 		6:
+			right_box.visible = true
 			show_tip("Shark weighs less but is farther away so it tilts you more!")
 			spawn_flotsam("shark")
 		7:
