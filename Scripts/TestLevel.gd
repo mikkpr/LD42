@@ -4,7 +4,7 @@ onready var timer = $UIContainer/UI/GameTimer
 onready var scoreboard = $Scoreboard
 onready var submitButton = $Scoreboard/UI/MarginContainer/EditContainer/Button
 onready var retryButton = $Scoreboard/Retry/UI/MarginContainer/ButtonContainer/Button
-onready var menuButton = $Scoreboard/UI/MarginContainer/EditContainer/MenuButton
+onready var menuButton = $Scoreboard/UI/MarginContainer/MenuButton
 
 var isFinished = false
 

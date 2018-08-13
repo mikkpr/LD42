@@ -27,6 +27,7 @@ func postScore(score):
 	$UI/MarginContainer/Scores/Loading.visible = true
 	$UI/MarginContainer/Label.visible = false
 	$UI/MarginContainer/EditContainer.visible = false
+	$UI/MarginContainer/MenuButton.visible = false
 	
 	var nickname = $UI/MarginContainer/EditContainer/LineEdit.text
 	networking.post_score_async(nickname, score)
@@ -58,14 +59,4 @@ func load_complete(json):
 		
 	$UI/MarginContainer/PositionLabel.visible = true
 	$UI/MarginContainer/PositionLabel.text = "Your position: " + str(json.position)
-	
-	$UI/MarginContainer/EditContainer.visible = true
-	$UI/MarginContainer/EditContainer/Button.visible = false
-	$UI/MarginContainer/EditContainer/LineEdit.visible = false
-	
-	$UI/MarginContainer/EditContainer/MenuButton.visible = true
-
-
-
-
-
+	$UI/MarginContainer/MenuButton.visible = true
